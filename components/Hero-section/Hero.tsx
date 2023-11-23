@@ -31,6 +31,7 @@ const Hero = (props: Props) => {
         <div className="relative">
           <div className="bg-black/50 lg:bg-transparent flex h-full w-full absolute z-50" />
           {/* <Spline scene="https://prod.spline.design/an1hkMD6iaf13YCO/scene.splinecode" /> */}
+          <Spline scene="https://prod.spline.design/DwGUhPnNdSZfB1Y1/scene.splinecode" />
         </div>
       </div>
       <div className="flex">
