@@ -6,7 +6,7 @@
 
 body{
   position: relative;
-  background-color: #000;
+  /* background-color: transparent; */
   font-size: 15px;
   height: 100%;
 }
@@ -15,7 +15,7 @@ html{  scroll-behavior: smooth; height: 100%;}
 
 ::-webkit-scrollbar {
   width: 0;
-  background: transparent;
+  /* background: transparent; */
 }
 
 @media (min-width: 1024px) {

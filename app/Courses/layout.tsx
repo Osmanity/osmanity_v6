@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Courses - Osmanity ",
+  description: "Courses by osmanity",
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -5,8 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <div className="bg-white">{children}</div>
+      <body className={`${inter.className} bg-white text-black`}>
+        {/* Content with black background */}
+        {children}
       </body>
     </html>
   );

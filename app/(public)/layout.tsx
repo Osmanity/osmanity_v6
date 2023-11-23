@@ -6,6 +6,7 @@ const CourseLayout = async ({ children }: { children: React.ReactNode }) => {
   const { userId } = auth();
 
   return (
+    //add body tag and change the bg for this layout importent
     <div className="h-full bg-[#252525]">
       {/* <div className="h-[80px] md:pl-80 fixed inset-y-0 w-full z-50">
         
