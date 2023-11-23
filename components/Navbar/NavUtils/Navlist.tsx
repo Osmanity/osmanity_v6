@@ -1,0 +1,54 @@
+"use client";
+import React, { useState } from "react";
+
+type Props = {
+  main: string;
+  submain: string;
+  path: string;
+  path2: string;
+  href: string;
+};
+
+const Navlist = ({ main, submain, path, path2, href }: Props) => {
+  const [focus, setFocus] = useState<boolean>(false);
+  return (
+    <a
+      href={href}
+      onMouseEnter={() => setFocus(true)}
+      onMouseLeave={() => setFocus(false)}
+      className="py-3 flex items-center space-x-3 cursor-pointer"
+    >
+      <svg
+        aria-hidden="true"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        version="1.1"
+        width="24"
+        data-view-component="true"
+        className={` mr-3 transition ease-in duration-100  ${
+          focus ? "text-[#7d40a9]" : "text-neutral-500"
+        }`}
+      >
+        <path d={path}></path>
+        <path d={path2}></path>
+      </svg>
+      <div
+        className={`${
+          focus ? "text-[#7d40a9]" : "text-neutral-500"
+        } transition ease-in duration-100   text-[12px] sm:text-[14px]`}
+      >
+        <div
+          className={`font-semibold transition ease-in duration-100 text-[12px] sm:text-[16px]   ${
+            focus ? "text-[#7d40a9]" : "text-neutral-800"
+          }   leading-5`}
+        >
+          {main}
+        </div>
+        <div className="hidden sm:flex">{submain}</div>
+      </div>
+    </a>
+  );
+};
+
+export default Navlist;
