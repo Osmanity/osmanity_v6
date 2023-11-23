@@ -27,11 +27,11 @@ const Hero = (props: Props) => {
           <Spline scene="https://prod.spline.design/9hflHH51haomJYpy/scene.splinecode" />
         </div>
       </div>
-      <div className="absolute flex flex-1 sm:hidden hero-drone w-[300px] h-[800px] top-20 mx-auto  left-0 right-0 ">
+      <div className="absolute flex flex-1 sm:hidden hero-drone w-[380px] h-[800px] top-20 mx-auto justify-center left-0 right-0 ">
         <div className="relative">
           <div className="bg-black/50 lg:bg-transparent flex h-full w-full absolute z-50" />
           {/* <Spline scene="https://prod.spline.design/an1hkMD6iaf13YCO/scene.splinecode" /> */}
-          <Spline scene="https://prod.spline.design/DwGUhPnNdSZfB1Y1/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/e4IrwDBt389erzXi/scene.splinecode" />
         </div>
       </div>
       <div className="flex">
@@ -91,18 +91,18 @@ const Hero = (props: Props) => {
                 sequence={[
                   // "- elibom Development", // Types 'One'
                   // 3000, // Waits 1s
-                  "- Web Development", // Types 'One'
+                  "- Web Development💻", // Types 'One'
                   3000, // Waits 1s
-                  "- Mobile Development", // Types 'One'
+                  "- Mobile Development🚀", // Types 'One'
                   3000, // Waits 1s
 
-                  "- AI Development",
+                  "- AI Development🤖",
                   3000,
-                  "- E-commerce",
+                  "- E-commerce🛍️",
                   3000, // Waits 2s
-                  "- Advertisment",
+                  "- Advertisment🎯",
                   3000,
-                  "- Education", // Types 'Four' without deleting 'Two'
+                  "- Education‍🎓", // Types 'Four' without deleting 'Two'
                   3000,
 
                   // () => {
@@ -124,7 +124,7 @@ const Hero = (props: Props) => {
                 //   paddingTop: "10px",
                 //   paddingBottom: "20px",
                 // }}
-                className="text-center sm:text-left italic text-white text-[7vw] min-[420px]:text-[6vw] lg:text-[60px]  font-bold tracking-wide leading-6  pt-3 pb-2 sm:pt-0 lg:pt-4 sm:pb-5"
+                className="text-center sm:text-left  text-white text-[6vw] min-[420px]:text-[6vw] lg:text-[60px]  font-bold tracking-wide leading-6  pt-3 pb-2 sm:pt-0 lg:pt-4 sm:pb-5"
               />
             </HeroH1>
           </div>
