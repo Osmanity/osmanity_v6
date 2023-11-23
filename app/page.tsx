@@ -22,7 +22,7 @@ import Spline from "@splinetool/react-spline";
 export default function Home() {
   return (
     <>
-      <div>
+      <div className="text-white">
         <div className=" z-50 sticky top-0">
           <div className="absolute">
             {/* <Header /> */}
