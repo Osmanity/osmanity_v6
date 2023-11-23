@@ -91,18 +91,18 @@ const Hero = (props: Props) => {
                 sequence={[
                   // "- elibom Development", // Types 'One'
                   // 3000, // Waits 1s
-                  "- Web Development 💻", // Types 'One'
+                  "-💻Web Development", // Types 'One'
                   3000, // Waits 1s
-                  "- Mobile Development 🚀", // Types 'One'
+                  "-🚀Mobile Development", // Types 'One'
                   3000, // Waits 1s
 
-                  "- AI Development 🤖",
+                  "-🤖AI Development",
                   3000,
-                  "- E-commerce 🛍️",
+                  "-🛍️E-commerce",
                   3000, // Waits 2s
-                  "- Advertisment 🎯",
+                  "-🎯Advertisment",
                   3000,
-                  "- Education 🎓", // Types 'Four' without deleting 'Two'
+                  "-🎓Education ", // Types 'Four' without deleting 'Two'
                   3000,
 
                   // () => {
