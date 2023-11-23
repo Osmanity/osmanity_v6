@@ -27,11 +27,11 @@ const Hero = (props: Props) => {
           <Spline scene="https://prod.spline.design/9hflHH51haomJYpy/scene.splinecode" />
         </div>
       </div>
-      <div className="absolute flex flex-1 sm:hidden hero-drone w-[380px] h-[800px] top-20 mx-auto justify-center left-0 right-0 ">
+      <div className="absolute flex flex-1 sm:hidden hero-drone w-[320px] h-[800px] top-5 mx-auto justify-center left-0  right-0">
         <div className="relative">
           <div className="bg-black/50 lg:bg-transparent flex h-full w-full absolute z-50" />
           {/* <Spline scene="https://prod.spline.design/an1hkMD6iaf13YCO/scene.splinecode" /> */}
-          <Spline scene="https://prod.spline.design/e4IrwDBt389erzXi/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/MZGttUZFW6c-uT-W/scene.splinecode" />
         </div>
       </div>
       <div className="flex">
