@@ -23,12 +23,12 @@ export default function Home() {
   return (
     <>
       <div className="">
-        <div className=" z-50 sticky top-0">
+        {/* <div className=" z-50 sticky top-0">
           <div className="absolute">
-            {/* <Header /> */}
+           
             <Navbar />
           </div>
-        </div>
+        </div> */}
         <div className="">
           <div className="overflow-hidden">
             <div className="relative ">
@@ -81,7 +81,7 @@ export default function Home() {
           </div>
         </div>
         {/* <div className="bg-[#0C1015] pb-[500px]" /> */}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

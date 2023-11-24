@@ -2,12 +2,13 @@ import Footer from "@/components/Footerv2";
 import Navbar from "@/components/Navbar/Navbar";
 import { auth } from "@clerk/nextjs";
 
-const CourseLayout = async ({ children }: { children: React.ReactNode }) => {
+const PublicLayout = async ({ children }: { children: React.ReactNode }) => {
   const { userId } = auth();
 
   return (
     //add body tag and change the bg for this layout importent
-    <div className="h-full bg-black text-white">
+
+    <section className="h-full bg-[#252525] text-black">
       {/* <div className="h-[80px] md:pl-80 fixed inset-y-0 w-full z-50">
         
       </div> */}
@@ -18,10 +19,10 @@ const CourseLayout = async ({ children }: { children: React.ReactNode }) => {
         </div>
       </div>
 
-      <main className=" h-full pt-10 sm:pt-0 ">{children}</main>
+      {children}
       <Footer />
-    </div>
+    </section>
   );
 };
 
-export default CourseLayout;
+export default PublicLayout;

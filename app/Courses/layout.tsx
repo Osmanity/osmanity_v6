@@ -8,17 +8,15 @@ export const metadata: Metadata = {
   description: "Courses by osmanity",
 };
 
-export default function RootLayout({
+export default function CourseLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-white`}>
-        {/* Content with black background */}
-        {children}
-      </body>
-    </html>
+    <section className={`${inter.className} bg-black text-black h-full`}>
+      {/* Content with black background */}
+      {children}
+    </section>
   );
 }
