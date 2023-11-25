@@ -80,7 +80,7 @@ export default function Home() {
           </div>
         </div>
         {/* <div className="bg-[#0C1015] pb-[500px]" /> */}
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );

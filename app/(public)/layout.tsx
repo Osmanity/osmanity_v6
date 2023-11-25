@@ -20,7 +20,7 @@ const PublicLayout = async ({ children }: { children: React.ReactNode }) => {
       </div> */}
 
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </section>
   );
 };
