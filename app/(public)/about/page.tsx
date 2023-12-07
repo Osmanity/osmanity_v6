@@ -7,12 +7,18 @@ type Props = {};
 
 const page = (props: Props) => {
   return (
-    <div className="flex flex-col md:flex-row text-white p-6 rounded-lg  h-full mx-auto ">
-      <div className="md:w-1/2 flex flex-1 h-60 sm:h-auto">
+    <div className="relative flex flex-1 min-h-screen flex-col md:flex-row text-white  rounded-lg  mx-auto ">
+      <Spline
+        className="-z-5 flex flex-1 items-center justify-center h-[150px] sm:h-auto p-10 mx-auto ml-60"
+        scene="https://prod.spline.design/xA8SzcwXhLCwEnyC/scene.splinecode"
+      />
+
+      {/* <div className="flex md:w-1/2  flex-1 sm:h-auto">
         <Spline scene="https://prod.spline.design/QkyHiI9q0Hg8U6ck/scene.splinecode" />
-      </div>
-      <div className="md:w-1/2 md:ml-6 flex flex-1 flex-col items-start justify-center sm:p-10">
-        <h2 className="sm:text-5xl text-2xl font-semibold">
+      </div> */}
+
+      <div className=" absolute z-5 flex flex-1 flex-col h-screen w-full items-start justify-center bg-gradient-to-l from-black/70 from-30% via-black/50 via-80% p-10">
+        <h2 className="sm:text-6xl text-2xl font-semibold">
           {"Hi! I'm Ibrahim Osman:"}
           <TypeAnimation
             sequence={[
@@ -37,7 +43,7 @@ const page = (props: Props) => {
           />
         </h2>
 
-        <p className="text-white/50 mt-4 max-w-lg">
+        <p className="text-white/50 mt-4 max-w-3xl text-xl">
           I am an innovative, detail-oriented and dynamic software developer
           with specialization in MERN stack. Seeking a responsible and
           challanging career, looking forward to honing the skills and knowledge

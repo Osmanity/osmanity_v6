@@ -28,7 +28,7 @@ export default function Home() {
             <Navbar />
           </div>
         </div> */}
-        <div className="">
+        <div className="h-full">
           <div className="overflow-hidden">
             <div className="relative ">
               {/* top planet */}
@@ -80,7 +80,7 @@ export default function Home() {
           </div>
         </div>
         {/* <div className="bg-[#0C1015] pb-[500px]" /> */}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

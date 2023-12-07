@@ -34,7 +34,7 @@ const Navbar = (props: Props) => {
   const router = useRouter();
   return (
     <div className=" w-screen  mx-auto ">
-      <div className="text-white  bg-gradient-to-b from-black from-30% via-black/50 via-80% pb-4  py-2 px-10">
+      <div className="text-white  bg-gradient-to-b from-black from-30% via-black/50 via-80% pb-4  py-2 px-10 z-50 sticky top-0">
         <div className="flex items-center max-lg:justify-between max-lg:flex-row-reverse flex-wrap">
           <div className="flex sm:justify-between justify-center items-center max-lg:w-full">
             <Sheet>
