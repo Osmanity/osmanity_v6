@@ -17,7 +17,7 @@ const page = (props: Props) => {
         <Spline scene="https://prod.spline.design/QkyHiI9q0Hg8U6ck/scene.splinecode" />
       </div> */}
 
-      <div className=" absolute z-5 flex flex-1 flex-col h-screen w-full items-start justify-center bg-gradient-to-l from-black/70 from-30% via-black/50 via-80% p-10">
+      <div className=" absolute z-5 flex flex-1 flex-col h-screen w-full items-start justify-center bg-gradient-to-l from-black/70 from-30% via-black/50 via-70% p-10">
         <h2 className="sm:text-6xl text-2xl font-semibold">
           {"Hi! I'm Ibrahim Osman:"}
           <TypeAnimation

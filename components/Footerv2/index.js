@@ -1,10 +1,9 @@
 "use client";
 
 import React, { useContext, useEffect } from "react";
-import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
+
 import { BsGithub } from "react-icons/bs";
 import { GrLinkedinOption } from "react-icons/gr";
-import { FiGithub } from "react-icons/fi";
 
 import {
   FooterContainer,
@@ -27,33 +26,8 @@ import {
   SocialMediaWrap,
   WebsiteRights,
 } from "./FooterElements";
-// import './App.sass'
-// import footerRocket from "../../public/img/footerRocket.svg";
-// import { UserContext } from "../../UserContext";
-import RocketFooterSection from "../RocketFooter";
 
 const Footer = () => {
-  // const { setUserInfo, userInfo } = useContext(UserContext);
-  // useEffect(() => {
-  //   fetch("http://localhost:4000/profile", {
-  //     credentials: "include",
-  //   }).then((response) => {
-  //     response.json().then((userInfo) => {
-  //       setUserInfo(userInfo);
-  //     });
-  //   });
-  // }, []);
-
-  // function logout() {
-  //   fetch("http://localhost:4000/logout", {
-  //     credentials: "include",
-  //     method: "POST",
-  //   });
-  //   setUserInfo(null);
-  // }
-
-  // const username = userInfo?.username;
-
   return (
     <div className="mt-48">
       {/* <RocketFooterSection /> */}
