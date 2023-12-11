@@ -1,179 +1,137 @@
-"use client";
-
-import React, { useContext, useEffect } from "react";
-
+// index.tsx
+import React from "react";
+import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
 import { BsGithub } from "react-icons/bs";
 import { GrLinkedinOption } from "react-icons/gr";
-
-import {
-  FooterContainer,
-  FooterInfoItems,
-  FooterInfoText,
-  FooterLink,
-  FooterLinkItems,
-  FooterLinkLastItems,
-  FooterLinksContainer,
-  FooterLinkTitle,
-  FooterLinkWrapper,
-  FooterSubtitle,
-  FooterTitle,
-  FooterWrap,
-  HighLigth,
-  SocialIconLink,
-  SocialIcons,
-  SocialLogo,
-  SocialMedia,
-  SocialMediaWrap,
-  WebsiteRights,
-} from "./FooterElements";
+import { FiGithub } from "react-icons/fi";
+import Link from "next/link";
+import RocketFooterSection from "../RocketFooter";
 
 const Footer = () => {
   return (
-    <div className="mt-48">
+    <footer
+      className="p-8 md:p-14 mx-auto flex flex-col justify-center items-center md:max-w-1100"
+      style={{
+        marginTop: "2rem",
+      }}
+    >
       {/* <RocketFooterSection /> */}
-      <FooterContainer>
-        <FooterWrap>
-          <FooterTitle>Osmanity</FooterTitle>
-          <FooterSubtitle>
-            | Leading the way in tech for humanity!
-          </FooterSubtitle>
-          <FooterLinksContainer>
-            <FooterLinkWrapper>
-              <FooterLinkItems>
-                <FooterLinkTitle>Info</FooterLinkTitle>
-                <FooterLink href="/hitta-oss">About</FooterLink>
-                <FooterLink href="/signin">Terms and Conditions</FooterLink>
-                <FooterLink href="/signin">Privacy Policy</FooterLink>
-                <FooterLink href="/signin">Payment Methods</FooterLink>
-              </FooterLinkItems>
-              <FooterLinkItems>
-                <FooterLinkTitle>Service</FooterLinkTitle>
-                <FooterLink href="/signin">Website/App building</FooterLink>
-                <FooterLink href="/signin">MobileApp building</FooterLink>
-                <FooterLink href="/signin">Pricing/Plans</FooterLink>
-                <FooterLink href="/signin">Hire me!</FooterLink>
-              </FooterLinkItems>
-            </FooterLinkWrapper>
-            <FooterLinkWrapper>
-              <FooterLinkItems>
-                <FooterLinkTitle>Admin</FooterLinkTitle>
-
-                <FooterLink href="/Dashboard">Dashboard</FooterLink>
-              </FooterLinkItems>
-            </FooterLinkWrapper>
-          </FooterLinksContainer>
-          <FooterInfoItems>
-            {/* <FooterInfoText>
-              Phone: <br />
-              <HighLigth>076-058-7355</HighLigth>
-            </FooterInfoText>
-            <FooterInfoText>
-              Mail: <br />
-              <HighLigth>Ibrahim@osmanity.com</HighLigth>
-            </FooterInfoText>
-            <FooterInfoText>
-              Location: <br />
-              <HighLigth>Stockholm</HighLigth>
-            </FooterInfoText> */}
-            <div style={{ fontSize: "14px", marginBottom: "5px" }}>
-              Phone: <br />
-              <span style={{ fontWeight: "700" }}>076-058-7355</span>
-            </div>
-            <div style={{ fontSize: "14px", marginBottom: "5px" }}>
-              Mail: <br />
-              <span style={{ fontWeight: "700" }}>Ibrahim@osmanity.com</span>
-            </div>
-            <div style={{ fontSize: "14px", marginBottom: "5px" }}>
-              Location: <br />
-              <span style={{ fontWeight: "700" }}>Stockholm</span>
-            </div>
-          </FooterInfoItems>
-          <SocialMedia>
-            <SocialMediaWrap>
-              <SocialIcons>
-                <SocialIconLink
-                  href="https://github.com/Osmanity"
-                  target="blank"
-                  aria-label="Faceebok"
-                >
-                  <BsGithub />
-                </SocialIconLink>
-                <SocialIconLink
-                  href="https://www.linkedin.com/in/ibrahim-osman-aa2294153/"
-                  target="blank"
-                  aria-label="Instagram"
-                >
-                  <GrLinkedinOption />
-                </SocialIconLink>
-                <SocialIconLink
-                  href="https://twitter.com/IbrahimOsmanity"
-                  target="blank"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter />
-                </SocialIconLink>
-              </SocialIcons>
-              <WebsiteRights>
-                © Osmanity {new Date().getFullYear()}. All Rights Reserved
-              </WebsiteRights>
-            </SocialMediaWrap>
-          </SocialMedia>
-
-          <div
+      <div>
+        <div className="flex flex-col items-center justify-center">
+          <h1
+            className="text-white text-2xl font-bold  uppercase text-center justify-center items-center mb-2"
             style={{
-              display: "flex",
-              flexDirection: "row",
-              paddingTop: 20,
+              letterSpacing: "10px",
+              fontFamily: "Times New Roman, Times, serif",
             }}
           >
-            <p
-              style={{
-                display: "flex",
-                // alignItems: "center",
-                // justifyContent: "center",
-                color: "#666",
-                // padding: 5,
-                // paddingTop: 15,
-                fontSize: 10,
-                opacity: "50%",
-              }}
+            Osmanity
+          </h1>
+          <p className="text-white text-sm italic mb-6">
+            | Leading the way in tech for humanity!
+          </p>
+          <div className="flex justify-center mb-8 mt-6">
+            {/* Footer Links */}
+            <div
+              className="flex space-x-10 justify-between"
+              // style={{ paddingLeft: "90px" }}
             >
-              {"</> & Crafted With "}
-            </p>
-            <p
-              style={{
-                display: "flex",
-                // alignItems: "center",
-                // justifyContent: "center",
-                color: "#666",
-                // padding: 5,
-                // paddingTop: 15,
-                fontSize: 10,
-                opacity: "25%",
-                paddingLeft: 1,
-              }}
+              <div
+                className="text-white flex flex-col items-center text-center  box-border"
+                style={{
+                  margin: "20px",
+                  width: "160px",
+                }}
+              >
+                <div className="  text-white">
+                  <h1 className="font-bold mb-2">Info</h1>
+                  <div>
+                    Mail:
+                    <span className="font-bold"> Ibrahim@osmanity.com</span>
+                  </div>
+                  <div>
+                    Phone: <br />
+                    <span className="font-bold">076-058-7355</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="text-white flex flex-col items-center text-left box-border "
+                style={{
+                  margin: "20px",
+                  width: "160px",
+                }}
+              >
+                <h1 className="font-bold mb-2">Service</h1>
+                <Link href="/signin">Website/App building</Link>
+                <Link href="/signin">MobileApp building</Link>
+                <Link href="/signin">Pricing/Plans</Link>
+                <Link href="/signin">Hire me!</Link>
+              </div>
+              <div
+                className="text-white flex flex-col items-center text-left box-border"
+                style={{
+                  margin: "20px",
+                  width: "160px",
+                }}
+              >
+                <h1 className="font-bold mb-2">Policy</h1>
+                <Link href="/signin">Terms and Conditions</Link>
+                <Link href="/signin">Payment Methods</Link>
+                <Link href="/signin">Privacy Policy</Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Info */}
+          {/* <h1 className="font-bold mb-2">Admin</h1>
+          <Link href="/Dashboard">Dashboard</Link> */}
+          {/* Social Media */}
+          <div className="mt-6">
+            <div
+              className="flex space-x-2 mx-10 justify-between"
+              style={{ marginLeft: "2.5rem", marginRight: "2.5rem" }}
             >
-              {" 🖤 "}
-            </p>
-            <p
-              style={{
-                display: "flex",
-                // alignItems: "center",
-                // justifyContent: "center",
-                color: "#666",
-                // padding: 5,
-                // paddingTop: 15,
-                fontSize: 10,
-                opacity: "50%",
-                paddingLeft: 1,
-              }}
-            >
-              {"By Osmanity"}
+              <a
+                href="https://github.com/Osmanity"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 text-2xl"
+              >
+                <BsGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ibrahim-osman-aa2294153/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 text-2xl"
+              >
+                <GrLinkedinOption />
+              </a>
+              <a
+                href="https://twitter.com/IbrahimOsmanity"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-gray-300 text-2xl"
+              >
+                <FaTwitter />
+              </a>
+            </div>
+            <p className="text-white mt-4">
+              © Osmanity {new Date().getFullYear()}. All Rights Reserved
             </p>
           </div>
-        </FooterWrap>
-      </FooterContainer>
-    </div>
+          {/* Crafted With Love */}
+          <div className="flex items-center space-x-1 mt-2">
+            <p className="text-gray-600 text-xs opacity-50">
+              {"</> & Crafted With"}
+            </p>
+            <p className="text-gray-600 text-xs opacity-25"> 🖤 </p>
+            <p className="text-gray-600 text-xs opacity-50">By Osmanity</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
 

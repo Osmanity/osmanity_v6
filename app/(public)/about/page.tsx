@@ -9,7 +9,7 @@ const page = (props: Props) => {
   return (
     <div className="relative flex flex-1 min-h-screen flex-col md:flex-row text-white  rounded-lg  mx-auto ">
       <Spline
-        className="-z-5 flex flex-1 items-center justify-center h-[150px] sm:h-auto p-10 mx-auto ml-60"
+        className="-z-5 flex flex-1 items-center justify-center h-[150px] sm:h-auto pt-10 pl-10 mx-auto ml-60"
         scene="https://prod.spline.design/xA8SzcwXhLCwEnyC/scene.splinecode"
       />
 
