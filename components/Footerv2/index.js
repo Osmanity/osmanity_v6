@@ -9,12 +9,7 @@ import RocketFooterSection from "../RocketFooter";
 
 const Footer = () => {
   return (
-    <footer
-      className="p-8 md:p-14 mx-auto flex flex-col justify-center items-center md:max-w-1100"
-      style={{
-        marginTop: "2rem",
-      }}
-    >
+    <footer className="p-8 md:p-14 mx-auto flex flex-col justify-center items-center md:max-w-1100 bg-[#000]">
       {/* <RocketFooterSection /> */}
       <div>
         <div className="flex flex-col items-center justify-center">
@@ -30,14 +25,14 @@ const Footer = () => {
           <p className="text-white text-sm italic mb-6">
             | Leading the way in tech for humanity!
           </p>
-          <div className="flex justify-center mb-8 mt-6">
+          <div className="flex flex-row justify-center mb-8 mt-6">
             {/* Footer Links */}
             <div
-              className="flex space-x-10 justify-between"
+              className="flex flex-wrap sm:flex-col space-x-10 justify-center"
               // style={{ paddingLeft: "90px" }}
             >
               <div
-                className="text-white flex flex-col items-center text-center  box-border"
+                className="text-white flex flex-col  items-center text-center  box-border"
                 style={{
                   margin: "20px",
                   width: "160px",
