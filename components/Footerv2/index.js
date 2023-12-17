@@ -9,7 +9,7 @@ import RocketFooterSection from "../RocketFooter";
 
 const Footer = () => {
   return (
-    <footer className="p-8 md:p-14 mx-auto flex flex-col justify-center items-center md:max-w-1100 bg-[#000]">
+    <footer className="p-8 md:p-14 mx-auto flex flex-col justify-center items-center md:max-w-1100 bg-black">
       {/* <RocketFooterSection /> */}
       <div>
         <div className="flex flex-col items-center justify-center">
