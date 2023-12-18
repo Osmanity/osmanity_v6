@@ -28,7 +28,7 @@ const Hero = () => {
                         <h2 className="text-white text-3xl font-bold mb-2 px-1">
                           {post.title}
                         </h2>
-                        <span className="text-gray-50 bg-sky-400 rounded-md px-2">
+                        <span className="text-gray-50 bg-[#763ec6] rounded-full px-2">
                           {post.tags}
                         </span>
                       </div>
@@ -70,7 +70,7 @@ const Hero = () => {
                         <h2 className="text-white text-3xl font-bold mb-2 px-1">
                           {post.title}
                         </h2>
-                        <span className="text-gray-50 bg-sky-400 rounded-md px-2">
+                        <span className="text-gray-50 bg-[#763ec6] rounded-full px-2">
                           {post.tags}
                         </span>
                       </div>
