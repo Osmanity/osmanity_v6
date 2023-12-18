@@ -219,7 +219,7 @@ const Navbar = (props: Props) => {
                       Courses
                     </a>
                   </li> */}
-                  <li onClick={() => router.push("/blogs")}>
+                  <li onClick={() => router.push("/blog")}>
                     <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
                       Blogs
                     </a>
