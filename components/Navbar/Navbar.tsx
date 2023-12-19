@@ -16,6 +16,8 @@ import { useRouter } from "next/navigation";
 
 import { MenuIcon } from "lucide-react";
 
+import { useRive } from "@rive-app/react-canvas";
+
 import {
   Sheet,
   SheetContent,
@@ -32,6 +34,16 @@ const Navbar = (props: Props) => {
   const { theme, setTheme } = useTheme();
   const { userId } = useAuth();
   const router = useRouter();
+
+  const { rive, RiveComponent } = useRive({
+    src: "/assets/riveObj/galactic_button.riv",
+    stateMachines: "State Machine 1",
+    artboard: "Galaxy Button",
+    autoplay: true,
+    onLoadError: () => console.log("error"),
+    onLoad: () => console.log("loading"),
+  });
+
   return (
     <div className=" w-screen  mx-auto ">
       <div className="text-white  bg-gradient-to-b from-black from-30% via-black/50 via-80% pb-4  py-2 px-10 z-50 sticky top-0">
@@ -229,15 +241,24 @@ const Navbar = (props: Props) => {
                   {/* <OpenSourceNav /> */}
                 </ul>
               </nav>
-              <div className="lg:flex items-center max-lg:flex-col lg:px-0 px-3 mb-3 lg:mb-0 text-left lg:space-x-4">
-                <div className="max-lg:flex justify-center max-lg:border-[1px] max-lg:mr-4 rounded-md max-lg:bg-neutral-800">
-                  <a
+              <div className="lg:flex items-center max-lg:flex-col lg:px-0 px-3 mb-3 lg:mb-0 text-left lg:space-x-4 relative">
+                {/* <div className="max-lg:flex justify-center max-lg:border-[1px] max-lg:mr-4 rounded-md max-lg:bg-neutral-800 "> */}
+                {/* <a
                     href=""
                     className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold mr-1.5 "
                   >
                     Contact Us !
-                  </a>
-                </div>
+                  </a> */}
+                <a href="/contact" className="">
+                  <RiveComponent
+                    className="z-1000 w-full h-full top-0 absolute left-0 opacity-70 hover:opacity-100"
+                    // onMouseEnter={() => rive && rive.play()}
+                    // onMouseLeave={() => rive && rive.pause()}
+                  />
+                </a>
+
+                <div className="pl-56" />
+                {/* </div> */}
                 <div
                   style={{
                     border: "1px solid #fff",

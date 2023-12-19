@@ -62,7 +62,7 @@ const Blogs = () => {
                 href={{
                   pathname: `blog/${post.id}`,
                   query: { ...post },
-                }}
+                }} 
               >
                 <div className="relative overflow-hidden w-full">
                   <div className="absolute h-full w-full bg-black/20" />
@@ -79,6 +79,7 @@ const Blogs = () => {
                       <div className="text-white font-bold text-sm flex flex-col gap-1">
                         <span>{post.publishDate}</span>
                       </div>
+                      div
                     </div>
                   </div>
                   <Image
