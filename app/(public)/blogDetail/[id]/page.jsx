@@ -3,31 +3,38 @@ import Image from "next/image";
 const page = ({ params, searchParams }) => {
   const post = searchParams;
   return (
-    <div className="py-10 bg-cover">
+    <div className="py-10 bg-cover pt-36 pb-28 text-white ">
+        
+        
       <div
-        className="mx-auto max-w-[1400px] md:w-[90%] bg-cover relative"
+        className="mx-auto max-w-[1400px] md:w-[90%] bg-cover relative "
         style={{
-          backgroundImage: `url(${post.image_url})`,
-          backgroundPosition: "100%",
-          backgroundRepeat: "no-repeat",
+            backgroundImage: `url(${post.image_url})`,
+            backgroundPosition: "100%",
+            backgroundRepeat: "no-repeat",
         }}
-      >
-        <div className="absolute top-0 bg-black/40 w-full h-full" />
+      ><div className="absolute top-0 bg-black/40 w-full h-full" />
         <div className="relative p-10 flex justify-center flex-col w-full items-center">
-          <span className="bg-sky-400 px-2 text-gray-50 rounded-md">
+          <span className="bg-[#763ec6] px-2 text-gray-50 rounded-full">
             {post.tags}
           </span>
-          <h1 className="text-3xl font-bold text-gray-50 mt-5">
+          <p className="text-3xl font-bold text-gray-50 mt-6">
             {post.title}
-          </h1>
+          </p>
           <div className="w-full flex flex-col justify-center items-center gap-4 text-gray-50">
+            
+          <div  className="rounded-full  bg-[#763ec6] border-[#763ec6] border-4 mt-5" >
             <Image
               src={post.authorImage}
-              width={300}
-              height={300}
+              width={160}
+              height={160}
               alt="author"
-              className="rounded-full w-40 h-40 object-cover border-sky-400 border-4 mt-5"
+              className="rounded-full w-40 h-40 object-cover "
             />
+          </div>
+
+
+           
             <div className="flex flex-col gap-1 text-center font-bold">
               <span>{post.authorName}</span>
               <span>{post.publishDate}</span>
