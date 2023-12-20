@@ -22,17 +22,7 @@ const page = ({ params, searchParams }) => {
             {post.title}
           </p>
           <div className="w-full flex flex-col justify-center items-center gap-4 text-gray-50">
-            
-          <div  className="rounded-full flex justify-center items-center w-[178px] h-[178px] bg-[#763ec6]  mt-5" >
-            <Image
-              src={post.authorImage}
-              width={160}
-              height={160}
-              alt="author"
-              className="rounded-full w-40 h-40 object-cover border-4 border-[#763ec6] "
-            />
-          </div>
-
+        
 
            
             <div className="flex flex-col gap-1 text-center font-bold">
