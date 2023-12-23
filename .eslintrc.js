@@ -9,6 +9,6 @@ module.exports = {
   rules: {
     "prettier/prettier": "warn",
     "no-shadow-restricted-names": "off",
-    // "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
   },
 };
