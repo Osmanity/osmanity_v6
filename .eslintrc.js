@@ -7,7 +7,8 @@ module.exports = {
   ],
   plugins: ["@typescript-eslint", "prettier"],
   rules: {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "no-shadow-restricted-names": "off",
+    // "@typescript-eslint/no-unused-vars": "warn",
   },
 };

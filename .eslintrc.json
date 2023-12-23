@@ -1,10 +1,11 @@
-{
-  "extends": "next/core-web-vitals",
-  "plugins": [
-   
-  ]
-  // "rules": {
-  //   "react/jsx-uses-react": "error",
-  //   "react/jsx-uses-vars": "error"
-  // }
-}
+// {
+//   "extends": [
+//     "next/core-web-vitals",
+//     "eslint:recommended",
+//     "plugin:@typescript-eslint/recommended"
+//   ],
+//   "parser": "@typescript-eslint/parser",
+//   "parserOptions": { "sourceType": "module" },
+//   "plugins": ["@typescript-eslint"],
+//   "root": true
+// }
