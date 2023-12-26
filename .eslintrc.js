@@ -10,5 +10,6 @@ module.exports = {
     "prettier/prettier": "warn",
     "no-shadow-restricted-names": "off",
     "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-non-null-assertion": "off",
   },
 };
