@@ -26,8 +26,8 @@ export async function PUT(
     if (!ownCourse) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
-
-    for (let item of list) {
+    // for (let item of list) changed here error occured
+    for (const item of list) {
       await db.chapter.update({
         where: { id: item.id },
         data: { position: item.position }
