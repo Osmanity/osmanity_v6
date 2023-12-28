@@ -1,7 +1,9 @@
+// import { delay } from "@/lib/delay";
 import Image from "next/image";
 
-const page = ({ searchParams }) => {
+const page = async ({ searchParams }) => {
   const post = searchParams;
+  // await delay(5000);
   return (
     <div className="py-10 bg-cover pt-36 pb-28 text-white ">
       <div

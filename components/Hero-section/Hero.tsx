@@ -1,17 +1,25 @@
 "use client";
-import React, { useState } from "react";
-import Spline from "@splinetool/react-spline";
+// import Spline from "@splinetool/react-spline";
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  loading: () => <p>Loading...</p>,
+});
+import { useState } from "react";
 
 import { TypeAnimation } from "react-type-animation";
 
-import { HeroH1 } from "./HeroElement";
 import Image from "next/image";
+import { HeroH1 } from "./HeroElement";
 
-type Props = {};
+import dynamic from "next/dynamic";
 
-const Hero = (props: Props) => {
+// import Loading from "@/app/loading";
+
+const Hero = () => {
   //   const [hovered, setHovered] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [hovered1, setHovered1] = useState<boolean>(false);
+  console.log(isLoading);
+
   return (
     <div className="relative max-w-[1280px] lg:pt-32 md:px-10 mx-auto pt-16 ">
       {/* <img
@@ -24,6 +32,7 @@ const Hero = (props: Props) => {
       <div className="absolute hidden sm:flex hero-drone top-10 sm:top-20 w-auto h-auto right-0 xl:right-0 ">
         <div className="relative">
           <div className="bg-black/50 lg:bg-transparent flex h-full w-full absolute z-50" />
+
           <Spline scene="https://prod.spline.design/9hflHH51haomJYpy/scene.splinecode" />
         </div>
       </div>
