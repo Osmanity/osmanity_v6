@@ -1,25 +1,12 @@
 // "use client";
 
-import { Button } from "@/components/ui/button";
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import Header from "@/components/Header";
-import Navbar from "@/components/Navbar/Navbar";
-import Hero from "@/components/Hero-section/Hero";
-import StickyNav from "@/components/Navbar/StickyNav";
-import Productivity from "@/components/Productivity/Productivity";
-import Collaboration from "@/components/Collaboration/Collaboration";
-import Security from "@/components/Security/Security";
 import Globe from "@/components/Footer/Globe";
-import Footer from "@/components/Footerv2";
-import Spline from "@splinetool/react-spline";
+import Hero from "@/components/Hero-section/Hero";
+import Productivity from "@/components/Productivity/Productivity";
+import { delay } from "@/lib/delay";
 
-export default function Home() {
+export default async function Home() {
+  await delay(4000);
   return (
     <>
       <div className="bg-black">
