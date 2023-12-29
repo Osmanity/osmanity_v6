@@ -12,13 +12,9 @@ import { HeroH1 } from "./HeroElement";
 
 import dynamic from "next/dynamic";
 
-// import Loading from "@/app/loading";
-
 const Hero = () => {
   //   const [hovered, setHovered] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [hovered1, setHovered1] = useState<boolean>(false);
-  console.log(isLoading);
 
   return (
     <div className="relative max-w-[1280px] lg:pt-32 md:px-10 mx-auto pt-16 ">

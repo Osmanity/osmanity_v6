@@ -6,7 +6,7 @@ import Productivity from "@/components/Productivity/Productivity";
 import { delay } from "@/lib/delay";
 
 export default async function Home() {
-  await delay(4000);
+  await delay(6000);
   return (
     <>
       <div className="bg-black">
