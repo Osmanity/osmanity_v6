@@ -6,13 +6,23 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
   const { userId } = auth();
 
   return (
-    <div className=" text-white min-h-screen relative bg-[#252525] ">
-      <div className="z-50 sticky top-0 ">
+    <div className=" text-white min-h-screen relative  ">
+      <div className="z-50 sticky top-0">
         <div className="absolute">
           <Navbar />
         </div>
       </div>
-      {children}
+
+      <div className="relative min-h-screen mx-auto overflow-hidden">
+        <img
+          className="absolute top-0 transition ease-in duration-200 max-xl:right-[-1050px] xl:right-[-970px] -z-30 image   overflow-hidden"
+          width="4377"
+          src="https://github.githubassets.com/images/modules/site/home-campaign/hero-bg.webp"
+          alt=""
+        />
+        {children}
+      </div>
+
       <Footer />
     </div>
   );

@@ -12,7 +12,7 @@ import ProductNav from "./ProductNav";
 
 import { MenuIcon } from "lucide-react";
 
-import { useRive } from "@rive-app/react-canvas";
+// import { useRive } from "@rive-app/react-canvas";
 
 import OsmanityLogo from "@/./public/img/OsmanityLogo.svg";
 
@@ -32,14 +32,14 @@ const Navbar = (props: Props) => {
   const { userId } = useAuth();
   const router = useRouter();
 
-  const { rive, RiveComponent } = useRive({
-    src: "/assets/riveObj/galactic_button.riv",
-    stateMachines: "State Machine 1",
-    artboard: "Galaxy Button",
-    autoplay: true,
-    onLoadError: () => console.log("error"),
-    onLoad: () => console.log("loading"),
-  });
+  // const { rive, RiveComponent } = useRive({
+  //   src: "/assets/riveObj/galactic_button.riv",
+  //   stateMachines: "State Machine 1",
+  //   artboard: "Galaxy Button",
+  //   autoplay: true,
+  //   onLoadError: () => console.log("error"),
+  //   onLoad: () => console.log("loading"),
+  // });
 
   return (
     <div className=" w-screen  mx-auto ">

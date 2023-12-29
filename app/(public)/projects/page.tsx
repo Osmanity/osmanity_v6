@@ -2,7 +2,7 @@ type Props = {};
 
 const page = (props: Props) => {
   return (
-    <div className="min-h-screen bg-black text-white flex justify-center items-center ">
+    <div className="min-h-screen  text-white flex justify-center items-center bg-black/60 overflow-hidden">
       Project
     </div>
   );
