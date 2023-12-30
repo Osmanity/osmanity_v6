@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Earth from "./Earth1";
 import Earth2 from "./Earth2";
 
@@ -11,25 +11,26 @@ const Globe = (props: Props) => {
   return (
     <div className="overflow-hidden relative">
       <div className="max-w-[1280px] mx-auto relative z-[2]">
-        <div className="flex my-8 md:my-16 sm:my-12 relative md:items-center text-center flex-col">
+        <div className="flex my-8 sm:my-12 md:my-4 relative md:items-center text-center flex-col">
           <div className="py-3 mb-2 flex flex-col justify-center items-center">
             <h2 className="px-4 mb-4 md:w-9/12 mx-auto lg:text-5xl md:text-4xl text-3xl font-bold text-white">
-              The place for anyone from anywhere to build anything
+              The place for anyone from anywhere to Learn anything
             </h2>
-            <p className="mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto md:w-7/12">
-              Whether you’re scaling your startup or just learning how to code,
-              GitHub is your home. Join the world’s largest developer platform
-              to build the innovations that empower humanity. Let’s&nbsp;build
-              from&nbsp;here.
+            <p className="mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto md:w-8/12">
+              Whether you’re learning web development, data science, or UI/UX,
+              Osmanity provides the courses and community to help you succeed.
+              Join our global learning platform to build the skills that empower
+              your career. Let's learn together.
             </p>
+
             <div className="lg:ml-5 flex items-center justify-center lg:space-x-5 max-lg:space-y-3 max-lg:flex-col max-lg:w-full max-lg:mt-5">
               <a
                 onMouseEnter={() => setHovered(true)}
                 onMouseLeave={() => setHovered(false)}
                 href=""
-                className="flex items-center bg-white font-bold px-14 py-3 justify-center rounded-md text-[20px]"
+                className="flex items-center bg-white text-black font-bold px-14 py-3 justify-center rounded-md text-[20px]"
               >
-                Sign up for GitHub
+                Sign up for Osmanity
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className={` ml-2 transition ease-in duration-150 ${
