@@ -1,11 +1,7 @@
 // index.tsx
-import React from "react";
-import { FaFacebook, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
-import { BsGithub } from "react-icons/bs";
-import { GrLinkedinOption } from "react-icons/gr";
-import { FiGithub } from "react-icons/fi";
 import Link from "next/link";
-import RocketFooterSection from "../RocketFooter";
+import { BsGithub, BsTwitterX } from "react-icons/bs";
+import { GrLinkedinOption } from "react-icons/gr";
 
 const Footer = () => {
   return (
@@ -109,7 +105,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-white hover:text-gray-300 text-2xl"
               >
-                <FaTwitter />
+                <BsTwitterX />
               </a>
             </div>
             <p className="text-white mt-4">
