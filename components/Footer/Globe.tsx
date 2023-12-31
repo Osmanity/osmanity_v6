@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Earth from "./Earth1";
-import Earth2 from "./Earth2";
 
 type Props = {};
 
@@ -9,8 +8,15 @@ const Globe = (props: Props) => {
   const [hovered, setHovered] = useState<boolean>(false);
   const [hovered1, setHovered1] = useState<boolean>(false);
   return (
-    <div className="overflow-hidden relative">
-      <div className="max-w-[1280px] mx-auto relative z-[2]">
+    <div className="overflow-hidden relative py-20">
+      <div className={`relative z-[2] max-sm:hidden`}>
+        <Earth />
+      </div>
+      <div className={`relative z-[2] sm:hidden`}>
+        {/* <Earth2 /> */}
+        <Earth />
+      </div>
+      <div className="-mt-28 max-w-[1280px] mx-auto relative z-[2]">
         <div className="flex my-8 sm:my-12 md:my-4 relative md:items-center text-center flex-col">
           <div className="py-3 mb-2 flex flex-col justify-center items-center">
             <h2 className="px-4 mb-4 md:w-9/12 mx-auto lg:text-5xl md:text-4xl text-3xl font-bold text-white">
@@ -92,12 +98,7 @@ const Globe = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className={`relative z-[2] max-sm:hidden`}>
-        <Earth />
-      </div>
-      <div className={`relative z-[2] sm:hidden`}>
-        <Earth2 />
-      </div>
+
       <img
         className="absolute bottom-0 left-0 w-full h-full object-cover d-block pointer-events-none"
         width="801"
