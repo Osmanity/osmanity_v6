@@ -46,7 +46,13 @@ body {
 html {
   scroll-behavior: smooth;
   height: 100%;
+  scroll-snap-type: y mandatory;
 }
+
+/* section {
+  padding-top: 96px;
+  scroll-snap-align: center;
+} */
 
 ::-webkit-scrollbar {
   width: 0;
@@ -60,6 +66,16 @@ html {
     backdrop-filter: blur(0.1px);
     -webkit-backdrop-filter: blur(3px);
   }
+}
+
+.scrollSnap {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+.sectionSnap {
+  height: 100vh;
+  scroll-snap-align: center;
 }
 
 .image {
