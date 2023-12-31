@@ -43,7 +43,7 @@ const Navbar = (props: Props) => {
 
   return (
     <div className=" w-screen  mx-auto ">
-      <div className="text-white  bg-gradient-to-b from-black from-30% via-black/50 via-80% pb-4  py-2 px-10 z-50 sticky top-0 ">
+      <div className="text-white  bg-gradient-to-b from-black from-30% via-black/50 via-80% pb-4  py-2 px-10 z-[99] sticky top-0 ">
         <div className="flex flex-row items-center justify-center">
           <Link href={"/"} className="opacity-100 hover:opacity-70">
             <Image
