@@ -15,7 +15,7 @@ export default function Loading() {
           alt="OsmanityLogo"
           width={50}
           height={50}
-          className="absolute top-0 h-16 w-24  mt-2 mr-1"
+          className="absolute top-0 h-16 w-24  mt-2 mr-1 animate-ping"
         />
         <Oval
           visible={true}
@@ -28,7 +28,14 @@ export default function Loading() {
           wrapperClass=""
         />
       </div>
-      <p className="ml-3 text-xl text-center text-white">Loading...</p>
+      <div className="flex flex-col justify-start items-start ">
+        <p className="ml-3 text-xl text-center font-mono text-white">
+          AboutPage Is
+        </p>
+        <p className="ml-3 text-xl text-center font-mono text-white flex animate-pulse">
+          Loading...
+        </p>
+      </div>
     </main>
   );
 }
