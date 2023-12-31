@@ -8,7 +8,7 @@ import OsmanityLogo from "../../../public/img/OsmanityLogo.svg";
 export default function Loading() {
   // await delay(5000);
   return (
-    <main className="flex flex-1 items-center justify-center text-7xl text-center bg-black w-full h-full absolute top-0 left-0 z-100">
+    <div className="flex flex-1 items-center justify-center text-7xl text-center bg-black w-full h-full absolute top-0 left-0 z-100">
       <div className="flex flex-col items-center justify-center relative">
         <Image
           src={OsmanityLogo}
@@ -28,7 +28,14 @@ export default function Loading() {
           wrapperClass=""
         />
       </div>
-      <p className="ml-3 text-xl text-center text-white">Loading...</p>
-    </main>
+      <div className="flex flex-col justify-start items-start ">
+        <p className="ml-3 text-xl text-center font-mono text-white">
+          HomePage Is
+        </p>
+        <p className="ml-3 text-xl text-center font-mono text-white flex animate-pulse">
+          Loading...
+        </p>
+      </div>
+    </div>
   );
 }

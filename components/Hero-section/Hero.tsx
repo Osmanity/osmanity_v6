@@ -7,83 +7,42 @@ import { useState } from "react";
 
 import { TypeAnimation } from "react-type-animation";
 
-import Image from "next/image";
 import { HeroH1 } from "./HeroElement";
 
 import dynamic from "next/dynamic";
+
+// import OsmanityBlackhole from "@/public/videos/blackhole.webm";
 
 const Hero = () => {
   //   const [hovered, setHovered] = useState<boolean>(false);
   const [hovered1, setHovered1] = useState<boolean>(false);
 
   return (
-    <div className="relative max-w-[1280px] lg:pt-32 md:px-10 mx-auto pt-16 ">
+    <div className="relative py-20 min-h-[880px] sm:min-h-[1000px] max-w-[1280px]  lg:pt-32 md:px-10 mx-auto pt-16 z-10 ">
       {/* <img
-        className="absolute hero-drone top-28 w-1/4 h-auto right-0 xl:right-0"
+        className="absolute right-0 w-1/4 h-auto hero-drone top-28 xl:right-0"
         width="500"
         height="326"
         src="https://github.githubassets.com/images/modules/site/home-campaign/hero-drone.webp"
         alt=""
       /> */}
-      <div className="absolute hidden sm:flex hero-drone top-10 sm:top-20 w-auto h-auto right-0 xl:right-0 ">
+      <div className="absolute top-0 left-0 z-30 w-full min-h-[880px] sm:min-h-[1000px] bg-black/40 lg:bg-transparent " />
+      <div className="absolute right-0 z-20 hidden w-auto h-auto sm:flex hero-drone top-10 sm:top-20 xl:right-0 ">
         <div className="relative">
-          <div className="bg-black/50 lg:bg-transparent flex h-full w-full absolute z-50" />
-
+          <div className="absolute z-20 flex w-full h-full " />
           <Spline scene="https://prod.spline.design/9hflHH51haomJYpy/scene.splinecode" />
         </div>
       </div>
-      <div className="absolute flex flex-1 sm:hidden hero-drone w-[320px] h-[800px] top-5 mx-auto justify-center left-0  right-0">
+      <div className="absolute mt-14 z-20 flex flex-1 sm:hidden hero-drone w-[320px] h-[800px] top-5 mx-auto justify-center left-0  right-0">
         <div className="relative">
-          <div className="bg-black/50 lg:bg-transparent flex h-full w-full absolute z-50" />
-          {/* <Spline scene="https://prod.spline.design/an1hkMD6iaf13YCO/scene.splinecode" /> */}
+          <div className="absolute z-20 flex w-full h-full " />
           <Spline scene="https://prod.spline.design/MZGttUZFW6c-uT-W/scene.splinecode" />
         </div>
       </div>
-      <div className="flex">
-        <div className="relative ">
-          <img
-            aria-hidden="true"
-            className="  md:flex md:pt-0"
-            src="https://github.githubassets.com/images/modules/site/home-campaign/lines-hero.svg"
-            width="437"
-            height="637"
-            alt=""
-          />
-          {/* <div className="mt-[652px] md:hidden" /> */}
+      {/* <div className="absolute top-0 left-0 z-50 w-full min-h-[880px] sm:min-h-[1000px] bg-black/30 lg:bg-transparent " /> */}
 
-          <div className="mx-auto my-3 ">
-            <span className="relative z-[11]">
-              <svg
-                aria-hidden="true"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                version="1.1"
-                width="24"
-                data-view-component="true"
-                className=" text-white"
-              >
-                <path d="M15.22 4.97a.75.75 0 0 1 1.06 0l6.5 6.5a.75.75 0 0 1 0 1.06l-6.5 6.5a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L21.19 12l-5.97-5.97a.75.75 0 0 1 0-1.06Zm-6.44 0a.75.75 0 0 1 0 1.06L2.81 12l5.97 5.97a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215l-6.5-6.5a.75.75 0 0 1 0-1.06l6.5-6.5a.75.75 0 0 1 1.06 0Z"></path>
-              </svg>
-              <span
-                className="absolute left-0 top-0 w-6 h-full  home-campaign-glowing-icon-glow "
-                style={{
-                  backgroundColor: "var(--mktg-accent-primary)",
-                  filter: "blur(17px)",
-                }}
-              ></span>
-            </span>
-          </div>
-          <div
-            style={{
-              background:
-                "linear-gradient(#d2a8ff, #a371f7 10%, #196c2e 70%, #2ea043 80%, #56d364)",
-              marginLeft: "11px",
-            }}
-            className=" max-md:w-[2px] w-[3px] h-[450px]  max-md:h-[650px] max-sm:h-[750px] max-ssm:h-[900px] max-sssm:h-[1150px] line rounded-md "
-          ></div>
-        </div>
-        <div className=" absolute pt-32 mt-28 max-md:px-4 ml-4 md:ml-12">
+      <div className="flex ">
+        <div className="absolute z-50 pt-32 ml-4 mt-28 max-md:px-4 md:ml-12">
           <div className="h-20 sm:h-auto">
             <h1 className="relative text-center sm:text-left min-[420px]:text-[7vw] text-[8vw] lg:text-7xl  max-sm:leading-[30px] max-md:leading-[80px]  font-semibold text-white">
               {" "}
@@ -140,7 +99,7 @@ const Hero = () => {
           >
 
           </div> */}
-          <p className="relative z-1 text-[5vw] min-[420px]:text-[4vw]  lg:text-[30px] text-center sm:text-left leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[40px] mb-5 md:mb-12 md:10/12  lg:w-8/12 text-white/50  mt-2">
+          <p className=" relative z-50 text-[5vw] min-[420px]:text-[4vw]  lg:text-[30px] text-center sm:text-left leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[40px] mb-5 md:mb-12 md:10/12  lg:w-8/12 text-white/50  mt-2">
             Our vision is to bring innovative and effective solutions to
             real-world problems and make it a reality. Our ultimate goal is to
             create problem-solving software that not only streamlines processes
@@ -148,7 +107,7 @@ const Hero = () => {
           </p>
           <div className="flex lg:w-11/12 md:space-x-5 max-md:flex-col">
             <form action="">
-              <div className=" grid max-md:grid-rows-2 md:grid-cols-2">
+              <div className="grid max-md:grid-rows-2 md:grid-cols-2">
                 <dl>
                   <dd>
                     <input
@@ -204,11 +163,11 @@ const Hero = () => {
               </svg>
             </a>
           </div>
-          <div className="md:my-14 sm:my-12 my-12 ">
+          {/* <div className="my-12 md:my-14 sm:my-12 ">
             <p className="text-[16px] leading-[24px] text-[#7d8590]">
               Trusted by&nbsp;↘︎
             </p>
-            <div className="flex flex-wrap justify-center sm:justify-center items-center">
+            <div className="flex flex-wrap items-center justify-center sm:justify-center">
               <Image
                 src={require("../../public/img/blackroseLogo.svg")}
                 alt="Stripe logo"
@@ -228,7 +187,7 @@ const Hero = () => {
                 className="my-3 scale-90"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

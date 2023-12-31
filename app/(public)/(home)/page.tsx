@@ -2,73 +2,61 @@
 
 import Globe from "@/components/Footer/Globe";
 import Hero from "@/components/Hero-section/Hero";
-import Productivity from "@/components/Productivity/Productivity";
 import { delay } from "@/lib/delay";
 
 export default async function Home() {
-  await delay(6000);
+  await delay(5000);
   return (
-    <>
-      <div className="bg-black">
-        {/* <div className=" z-50 sticky top-0">
-          <div className="absolute">
-            <Navbar />
-          </div>
-        </div> */}
-        <div className="h-full">
-          <div className="overflow-hidden">
-            <div className="relative ">
-              {/* top planet */}
-              <img
-                className="absolute top-0 transition ease-in duration-200 max-xl:right-[-1050px] xl:right-[-970px] -z-30  image"
-                width="4377"
-                src="https://github.githubassets.com/images/modules/site/home-campaign/hero-bg.webp"
-                alt=""
+    <div className="relative min-h-screen overflow-hidden bg-black ">
+      <div className="relative w-full min-h-screen overflow-hidden hero-section">
+        <video
+          autoPlay
+          muted
+          loop
+          className="rotate-180 absolute top-[-250px]  h-full w-auto min-h-[880px] sm:min-h-[1000px]  left-0 z-[10] object-cover "
+        >
+          <source src="/videos/blackhole.webm" type="video/webm" />
+        </video>
+        {/* <div className="absolute top-0 left-0 z-50 w-full min-h-screen bg-black/30 " /> */}
+        <div className="absolute top-0 left-0 z-[10] w-full min-h-[880px] sm:min-h-[1000px] bg-black/50  " />
+        <div className=" w-full ">
+          <Hero />
+        </div>
+      </div>
+      {/* <div className="my-12 md:my-14 sm:my-12 ">
+            <p className="text-[16px] leading-[24px] text-[#7d8590]">
+              Trusted by&nbsp;↘︎
+            </p>
+            <div className="flex flex-wrap items-center justify-center sm:justify-center">
+              <Image
+                src={require("../../public/img/blackroseLogo.svg")}
+                alt="Stripe logo"
+                height="140"
+                className="my-3 scale-90 h-140 w-140"
+              />
+              <Image
+                src={require("../../public/img/BlueAngel.svg")}
+                alt="Stripe logo"
+                height="100"
+                className="my-3 scale-90 h-100 w-100"
+              />
+              <Image
+                src={require("../../public/img/CVMasterna.svg")}
+                alt="Stripe logo"
+                height="100"
+                className="my-3 scale-90"
               />
             </div>
-            <div className="hero-section px-3 bg-black ">
-              <Hero />
-            </div>
-            {/* <StickyNav /> */}
-            <div
-              id="productivity"
-              className="home-campaign-productivity px-4 pt-8 overflow-hidden bg-[#0C1015]"
-            >
-              <Productivity />
-            </div>{" "}
-            {/*
-            <div
-              id="collaboration"
-              className="home-campaign-productivity px-4 pt-8  overflow-hidden bg-[#0C1015]"
-            >
-              <Collaboration />
-            </div>
-            <div
-              id="security"
-              className="home-campaign-productivity px-4 pt-8 pb-16 overflow-hidden bg-[#0C1015]"
-            >
-              <Security />
-            </div>*/}
-            <Globe />
-            {/* <div className="max-w-[1280px] mx-auto relative z-[2]  px-5">
-              <ul className="lg:w-9/12 text-[14px] pt-16 text-[#7d8590] space-y-1">
-                <li>
-                  <sup id="footnote-1">1</sup> The Total Economic Impact™ Of
-                  GitHub Enterprise Cloud and Advanced Security, a commissioned
-                  study conducted by Forrester Consulting, 2022. Results are for
-                  a composite organization based on interviewed customers.
-                </li>
-                <li>
-                  <sup id="footnote-2">2</sup> GitHub, Octoverse 2022 The state
-                  of open source software.
-                </li>
-              </ul>
-            </div> */}
-          </div>
-        </div>
-        {/* <div className="bg-[#0C1015] pb-[500px]" /> */}
-        {/* <Footer /> */}
-      </div>
-    </>
+          </div> */}
+
+      {/* <section className="min-h-screen flex justify-center items-center text-white text-center">
+        hello
+        <div className="h-[1000px] w-80 bg-slate-400"></div>
+      </section> */}
+
+      <Globe />
+
+      {/* <Footer /> */}
+    </div>
   );
 }

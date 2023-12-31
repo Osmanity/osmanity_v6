@@ -12,7 +12,9 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
           <Navbar />
         </div>
       </div>
-      {children}
+      <div className="relative min-h-screen mx-auto overflow-hidden">
+        {children}
+      </div>
       <Footer />
     </div>
   );
