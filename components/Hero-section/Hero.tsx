@@ -1,15 +1,15 @@
 "use client";
 // import Spline from "@splinetool/react-spline";
-const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  loading: () => <p>Loading...</p>,
-});
+// const Spline = dynamic(() => import("@splinetool/react-spline"), {
+//   loading: () => <p>Loading...</p>,
+// });
 import { useState } from "react";
 
 import { TypeAnimation } from "react-type-animation";
 
 import { HeroH1 } from "./HeroElement";
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
 // import OsmanityBlackhole from "@/public/videos/blackhole.webm";
 
@@ -18,7 +18,7 @@ const Hero = () => {
   const [hovered1, setHovered1] = useState<boolean>(false);
 
   return (
-    <div className="relative py-20 min-h-[880px] sm:min-h-[1000px] max-w-[1280px]  lg:pt-32 md:px-10 mx-auto pt-16 z-10 ">
+    <div className="relative py-40 min-h-[880px] sm:min-h-[1000px] max-w-[1280px]  lg:pt-32 md:px-10 mx-auto pt-16 z-30 ">
       {/* <img
         className="absolute right-0 w-1/4 h-auto hero-drone top-28 xl:right-0"
         width="500"
@@ -27,7 +27,7 @@ const Hero = () => {
         alt=""
       /> */}
       <div className="absolute top-0 left-0 z-30 w-full min-h-[880px] sm:min-h-[1000px] bg-black/40 lg:bg-transparent " />
-      <div className="absolute right-0 z-20 hidden w-auto h-auto sm:flex hero-drone top-10 sm:top-20 xl:right-0 ">
+      {/* <div className="absolute right-0 z-20 hidden w-auto h-auto sm:flex hero-drone top-10 sm:top-20 xl:right-0 ">
         <div className="relative">
           <div className="absolute z-20 flex w-full h-full " />
           <Spline scene="https://prod.spline.design/9hflHH51haomJYpy/scene.splinecode" />
@@ -38,15 +38,15 @@ const Hero = () => {
           <div className="absolute z-20 flex w-full h-full " />
           <Spline scene="https://prod.spline.design/MZGttUZFW6c-uT-W/scene.splinecode" />
         </div>
-      </div>
+      </div> */}
       {/* <div className="absolute top-0 left-0 z-50 w-full min-h-[880px] sm:min-h-[1000px] bg-black/30 lg:bg-transparent " /> */}
 
       <div className="flex ">
-        <div className="absolute z-50 pt-32 ml-4 mt-28 max-md:px-4 md:ml-12">
+        <div className="absolute z-50 pt-32  mt-28 max-md:px-4 ">
           <div className="h-20 sm:h-auto">
             <h1 className="relative text-center sm:text-left min-[420px]:text-[7vw] text-[8vw] lg:text-7xl  max-sm:leading-[30px] max-md:leading-[80px]  font-semibold text-white">
               {" "}
-              Service We Provide:
+              <span className="fancy-text">Service</span> We Provide:
             </h1>
             <HeroH1>
               {/* {`Service We Provide: `} */}

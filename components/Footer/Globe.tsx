@@ -20,7 +20,9 @@ const Globe = (props: Props) => {
         <div className="flex my-8 sm:my-12 md:my-4 relative md:items-center text-center flex-col">
           <div className="py-3 mb-2 flex flex-col justify-center items-center">
             <h2 className="px-4 mb-4 md:w-9/12 mx-auto lg:text-5xl md:text-4xl text-3xl font-bold text-white">
-              The place for anyone from anywhere to Learn anything
+              The Place For <span className="fancy-text">Anyone</span> <br />{" "}
+              From <span className="fancy-text">Anywhere</span> To Learn{" "}
+              <span className="fancy-text">Anything</span>
             </h2>
             <p className="mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto md:w-8/12">
               Whether you’re learning web development, data science, or UI/UX,

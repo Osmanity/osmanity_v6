@@ -2,7 +2,13 @@ import Footer from "@/components/Footerv2";
 import Navbar from "@/components/Navbar/Navbar";
 import { auth } from "@clerk/nextjs";
 
-const PublicLayout = ({ children }: { children: React.ReactNode }) => {
+const PublicLayout = ({
+  children,
+  splineobj,
+}: {
+  children: React.ReactNode;
+  splineobj: React.ReactNode;
+}) => {
   const { userId } = auth();
 
   return (
@@ -12,7 +18,9 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
           <Navbar />
         </div>
       </div>
-      <div className="relative min-h-screen mx-auto overflow-hidden">
+      <div className="relative w-full min-h-screen mx-auto overflow-hidden">
+        {splineobj}
+
         {children}
       </div>
       <Footer />

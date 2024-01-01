@@ -49,6 +49,27 @@ html {
   scroll-snap-type: y mandatory;
 }
 
+.fancy-text {
+  background: linear-gradient(90deg, rgb(201, 144, 255), #3e15f3);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glow {
+  height: 150px;
+  border-radius: 50%;
+  width: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  position: absolute;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, #e44141, #4f2af3);
+  filter: blur(160px);
+  opacity: 50%;
+}
+
 /* section {
   padding-top: 96px;
   scroll-snap-align: center;
