@@ -11,6 +11,7 @@ export default async function Home() {
       <div className="relative w-full min-h-screen overflow-hidden hero-section">
         <video
           autoPlay
+          playsInline
           muted
           loop
           className="rotate-180 absolute top-[-250px]  h-full w-auto min-h-[880px] sm:min-h-[1000px]  left-0 z-[10] object-cover "
