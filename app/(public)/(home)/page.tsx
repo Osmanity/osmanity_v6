@@ -16,6 +16,7 @@ export default async function Home() {
           className="rotate-180 absolute top-[-250px]  h-full w-auto min-h-[880px] sm:min-h-[1000px]  left-0 z-[10] object-cover "
         >
           <source src="/videos/blackhole.webm" type="video/webm" />
+          <source src="/videos/blackhole.mp4" type="video/mp4" />
         </video>
         {/* <div className="absolute top-0 left-0 z-50 w-full min-h-screen bg-black/30 " /> */}
         <div className="absolute top-0 left-0 z-[10] w-full min-h-[880px] sm:min-h-[1000px] bg-black/50  " />
