@@ -1,5 +1,5 @@
-import { LucideIcon } from "lucide-react";
 import { cva, type VariantProps } from "class-variance-authority";
+import { LucideIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -8,8 +8,8 @@ const backgroundVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-black/20",
-        success: "bg-black/20",
+        default: "bg-black/20 dark:bg-white/40",
+        success: "bg-black/20 dark:bg-white/40",
       },
       size: {
         default: "p-2",
@@ -20,14 +20,14 @@ const backgroundVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 const iconVariants = cva("", {
   variants: {
     variant: {
-      default: "text-black",
-      success: "text-black",
+      default: "text-black dark:text-white",
+      success: "text-black dark:text-white",
     },
     size: {
       default: "h-8 w-8",

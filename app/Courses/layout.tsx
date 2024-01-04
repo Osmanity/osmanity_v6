@@ -14,7 +14,7 @@ export default function CourseLayout({
   children: React.ReactNode;
 }) {
   return (
-    <section className={`${inter.className} bg-black text-black h-full`}>
+    <section className={`${inter.className} h-full bg-black`}>
       {/* Content with black background */}
       {children}
     </section>

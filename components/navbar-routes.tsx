@@ -1,13 +1,14 @@
 "use client";
 
 import { UserButton, useAuth } from "@clerk/nextjs";
-import { usePathname } from "next/navigation";
 import { LogOut } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { isTeacher } from "@/lib/teacher";
 
+import { ThemeToggle } from "./ThemeToggle";
 import { SearchInput } from "./search-input";
 
 export const NavbarRoutes = () => {
@@ -41,6 +42,9 @@ export const NavbarRoutes = () => {
           </Link>
         ) : null}
         <UserButton afterSignOutUrl="/" />
+      </div>
+      <div className="mx-4">
+        <ThemeToggle />
       </div>
     </>
   );

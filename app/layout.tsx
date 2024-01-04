@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -17,10 +18,20 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className="">
+      <html
+        lang="en"
+        className="overflow-hidden-all dark:bg-black bg-white dark:text-white text-black "
+      >
         <body className={`${inter.className} `}>
           {/* <Suspense fallback={<Loading />}> */}
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
           {/* </Suspense> */}
         </body>
       </html>

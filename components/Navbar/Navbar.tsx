@@ -15,6 +15,7 @@ import { MenuIcon } from "lucide-react";
 // import { useRive } from "@rive-app/react-canvas";
 
 import OsmanityLogo from "@/./public/img/OsmanityLogo.svg";
+import OsmanityLogoW from "@/./public/img/OsmanityLogoW.svg";
 
 import {
   Sheet,
@@ -24,11 +25,13 @@ import {
 } from "@/components/ui/sheet";
 import Image from "next/image";
 
+import { ThemeToggle } from "@/components/ThemeToggle";
+
 type Props = {};
 
 const Navbar = (props: Props) => {
   const [showNav, setShowNav] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const { userId } = useAuth();
   const router = useRouter();
 
@@ -42,18 +45,29 @@ const Navbar = (props: Props) => {
   // });
 
   return (
-    <div className=" w-screen  mx-auto ">
-      <div className="text-white  bg-gradient-to-b from-black from-30% via-black/50 via-80% pb-4  py-2 px-10 z-[99] sticky top-0 ">
+    <div className="w-screen mx-auto select-none ">
+      <div className="dark:text-white text-black  bg-gradient-to-b dark:from-black from-white from-30% dark:via-black/50 via-white/50 via-80% pb-4  py-2 px-10 z- sticky top-0 ">
         <div className="flex flex-row items-center justify-center">
           <Link href={"/"} className="opacity-100 hover:opacity-70">
-            <Image
-              src={OsmanityLogo}
-              alt="OsmanityLogo"
-              width={50}
-              height={50}
-              className=" h-16 w-24 p-1 lg:p-0 pb-2 sm:pb-0 mr-4 hidden sm:block"
-            />
+            {resolvedTheme === "dark" ? (
+              <Image
+                src={OsmanityLogo}
+                alt="OsmanityLogoBlack"
+                width={50}
+                height={50}
+                className="h-16 w-24 p-1 lg:p-0 pb-2 sm:pb-0 mr-4 hidden sm:block"
+              />
+            ) : (
+              <Image
+                src={OsmanityLogoW}
+                alt="OsmanityLogoWhite"
+                width={50}
+                height={50}
+                className="h-16 w-24 p-1 lg:p-0 pb-2 sm:pb-0 mr-4 hidden sm:block"
+              />
+            )}
           </Link>
+
           <div className="flex flex-col w-full justify-center items-start">
             <div className="flex sm:justify-between justify-center items-center max-lg:w-full">
               <Sheet>
@@ -82,7 +96,7 @@ const Navbar = (props: Props) => {
 
                 <div
                   style={{
-                    color: "#fff",
+                    // color: "#fff",
                     // fontSize: "2.2rem",
                     fontWeight: "bold",
                     letterSpacing: "12px",
@@ -92,7 +106,7 @@ const Navbar = (props: Props) => {
                     justifyContent: "center",
                     alignItems: "center",
                   }}
-                  className="text-xl sm:text-3xl   hover:cursor-pointer opacity-100 hover:opacity-70"
+                  className="text-xl sm:text-3xl dark:text-white text-black  hover:cursor-pointer opacity-100 hover:opacity-70"
                   onClick={() => router.push("/")}
                 >
                   Osmanity
@@ -248,8 +262,10 @@ const Navbar = (props: Props) => {
                     {/* <OpenSourceNav /> */}
                   </ul>
                 </nav>
+
                 <div className="lg:flex items-center max-lg:flex-col lg:px-0 px-3 mb-3 lg:mb-0 text-left lg:space-x-4 relative">
                   {/* <div className="max-lg:flex justify-center max-lg:border-[1px] max-lg:mr-4 rounded-md max-lg:bg-neutral-800 "> */}
+
                   <a
                     href=""
                     className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold mr-1.5 "
@@ -266,12 +282,7 @@ const Navbar = (props: Props) => {
 
                   <div className="pl-56" /> */}
                   {/* </div> */}
-                  <div
-                    style={{
-                      border: "1px solid #fff",
-                      padding: "15px 0px",
-                    }}
-                  />
+                  <div className="border dark:border-white border-black px-0 py-3" />
                   <div className="flex items-center">
                     <Button
                       variant="ghost"
@@ -285,6 +296,9 @@ const Navbar = (props: Props) => {
                     {/* <ProfileButton /> */}
                     {/* <UserButton afterSignOutUrl="/" /> */}
                     <ProfileButton />
+                    <div className="mx-4">
+                      <ThemeToggle />
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+import { Avatar } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,9 +7,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { UserCircle2 } from "lucide-react";
 import { useAuth } from "@clerk/nextjs";
+import { UserCircle2 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -20,9 +20,11 @@ const ProfileButton = () => {
       <DropdownMenuTrigger>
         <Avatar>
           {/* <AvatarImage src="/img/shadcn.jpg" /> */}
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center outline-none border-none active:border-none active:outline-none focus:border-none focus:outline-none  rounded-md">
             {userId ? (
-              <UserCircle2 />
+              <div className="flex justify-center items-center hover:bg-accent hover:text-accent-foreground h-9 w-9 rounded-md">
+                <UserCircle2 strokeWidth={"1.50px"} />
+              </div>
             ) : (
               <div className="hover:border-neutral-400 sm:border-white border-black/70 border-2 rounded-full p-1 px-4 ">
                 <Link
