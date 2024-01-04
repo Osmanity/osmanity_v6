@@ -115,7 +115,7 @@ const Navbar = (props: Props) => {
                   <MenuIcon
                     className="lg:hidden h-6 w-6 sm:h-8 sm:w-8 cursor-pointer absolute right-3 top-2 pt-0.5 sm:top-6 sm:right-8 sm:pt-0 dark:text-white text-black "
                     size={24}
-                    color={resolvedTheme === "dark" ? "white" : "black"}
+                    // color={resolvedTheme === "dark" ? "white" : "black"}
                   />
                   {/* <button
                   type="button"
