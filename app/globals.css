@@ -38,10 +38,8 @@
 
 /* Convert it to tailwind */
 body {
-  position: relative;
-  background-color: transparent;
+  @apply relative dark:bg-black bg-white h-full;
   font-size: 15px;
-  height: 100%;
 }
 
 html {
