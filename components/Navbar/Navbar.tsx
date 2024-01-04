@@ -46,7 +46,7 @@ const Navbar = (props: Props) => {
 
   return (
     <div className="w-screen mx-auto select-none ">
-      <div className="dark:text-white text-black  bg-gradient-to-b dark:from-black from-white from-30% dark:via-black/50 via-white/50 via-80% pb-4  py-2 px-10 z- sticky top-0 ">
+      <div className="dark:text-white text-black  bg-gradient-to-b dark:from-black from-white from-30% dark:via-black/50 via-white/50 via-80% pb-4  py-2 px-10 z-[999] sticky top-0 ">
         <div className="flex flex-row items-center justify-center">
           <Link href={"/"} className="opacity-100 hover:opacity-70">
             {resolvedTheme === "dark" ? (
@@ -115,7 +115,7 @@ const Navbar = (props: Props) => {
                   <MenuIcon
                     className="lg:hidden h-6 w-6 sm:h-8 sm:w-8 cursor-pointer absolute right-3 top-2 pt-0.5 sm:top-6 sm:right-8 sm:pt-0 "
                     size={24}
-                    color="white"
+                    color={resolvedTheme === "dark" ? "white" : "black"}
                   />
                   {/* <button
                   type="button"

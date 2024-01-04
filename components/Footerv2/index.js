@@ -5,12 +5,12 @@ import { GrLinkedinOption } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <footer className="p-8 md:p-14 mx-auto flex flex-col justify-center items-center md:max-w-1100 bg-black">
+    <footer className="p-8 md:p-14 mx-auto flex flex-col justify-center items-center md:max-w-1100 dark:bg-black bg-white dark:text-white text-black relative z-40">
       {/* <RocketFooterSection /> */}
       <div>
         <div className="flex flex-col items-center justify-center">
           <h1
-            className="text-white text-2xl font-bold  uppercase text-center justify-center items-center mb-2"
+            className="dark:text-white text-black text-2xl font-bold  uppercase text-center justify-center items-center mb-2"
             style={{
               letterSpacing: "10px",
               fontFamily: "Times New Roman, Times, serif",
@@ -18,7 +18,7 @@ const Footer = () => {
           >
             Osmanity
           </h1>
-          <p className="text-white text-sm italic mb-6">
+          <p className="dark:text-white text-black text-sm italic mb-6">
             | Leading the way in tech for humanity!
           </p>
           <div className="flex flex-row justify-center mb-8 mt-6">
@@ -28,13 +28,13 @@ const Footer = () => {
               // style={{ paddingLeft: "90px" }}
             >
               <div
-                className="text-white flex flex-col  items-center text-center  box-border"
+                className="dark:text-white text-black flex flex-col  items-center text-center  box-border"
                 style={{
                   margin: "20px",
                   width: "160px",
                 }}
               >
-                <div className="  text-white">
+                <div className="  dark:text-white text-black">
                   <h1 className="font-bold mb-2">Info</h1>
                   <div>
                     Mail:
@@ -47,7 +47,7 @@ const Footer = () => {
                 </div>
               </div>
               <div
-                className="text-white flex flex-col items-center text-left box-border "
+                className="dark:text-white text-black flex flex-col items-center text-left box-border "
                 style={{
                   margin: "20px",
                   width: "160px",
@@ -60,7 +60,7 @@ const Footer = () => {
                 <Link href="/signin">Hire me!</Link>
               </div>
               <div
-                className="text-white flex flex-col items-center text-left box-border"
+                className="dark:text-white text-black flex flex-col items-center text-left box-border"
                 style={{
                   margin: "20px",
                   width: "160px",
@@ -87,7 +87,7 @@ const Footer = () => {
                 href="https://github.com/Osmanity"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 text-2xl"
+                className="dark:text-white text-black hover:text-gray-300 text-2xl"
               >
                 <BsGithub />
               </a>
@@ -95,7 +95,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/ibrahim-osman-aa2294153/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 text-2xl"
+                className="dark:text-white text-black hover:text-gray-300 text-2xl"
               >
                 <GrLinkedinOption />
               </a>
@@ -103,12 +103,12 @@ const Footer = () => {
                 href="https://twitter.com/IbrahimOsmanity"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gray-300 text-2xl"
+                className="dark:text-white text-black hover:text-gray-300 text-2xl"
               >
                 <BsTwitterX />
               </a>
             </div>
-            <p className="text-white mt-4">
+            <p className="dark:text-white text-black mt-4">
               © Osmanity {new Date().getFullYear()}. All Rights Reserved
             </p>
           </div>
