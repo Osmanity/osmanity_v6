@@ -36,9 +36,10 @@
   box-sizing: border-box;
 }
 
+/* Convert it to tailwind */
 body {
   position: relative;
-  /* background-color: transparent; */
+  background-color: transparent;
   font-size: 15px;
   height: 100%;
 }
@@ -49,6 +50,17 @@ html {
   scroll-snap-type: y mandatory;
 }
 
+.overflow-hidden-all {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.overflow-hidden-all::-webkit-scrollbar {
+  display: none;
+}
+
 .fancy-text {
   background: linear-gradient(90deg, rgb(201, 144, 255), #3e15f3);
   background-clip: text;
@@ -56,8 +68,8 @@ html {
   color: transparent;
 }
 
-.glow {
-  height: 150px;
+/* .glow {
+  height: 200px;
   border-radius: 50%;
   width: 80%;
   margin: 0 auto;
@@ -65,10 +77,61 @@ html {
   right: 0;
   position: absolute;
   transform: translateY(-50%);
-  background: linear-gradient(90deg, #e44141, #4f2af3);
+  background: linear-gradient(90deg, #fff, #ffffffa0);
+  
   filter: blur(160px);
   opacity: 50%;
+} */
+
+.glow {
+  @apply h-80 w-4/5 absolute left-0 right-0 -translate-y-1/2 m-auto rounded-full bg-gradient-to-r dark:from-white dark:to-white/40 from-black to-black blur-[160px] dark:opacity-50;
 }
+
+.grid-glow {
+  --mask-image: radial-gradient(50% 65% at top center, white, transparent);
+  mask-image: var(--mask-image);
+  -webkit-mask-image: var(var(--mask-image));
+  opacity: 40%;
+  position: relative;
+  z-index: 5;
+  top: 100px;
+}
+
+#bubbles {
+  --mask-image: radial-gradient(50% 65% at top center, black, transparent);
+  mask-image: var(--mask-image);
+  -webkit-mask-image: var(var(--mask-image));
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+/* .bubble {
+  @apply rounded-full h-48 w-48 bg-gradient-radial from-[#FFFFFF] via-[#FFFFFF] to-transparent;
+} */
+
+.bubble {
+  /* top: 50%;
+  height: 50%; */
+  border-radius: 50%;
+  position: absolute;
+}
+
+.gradientBg {
+  border-radius: 20px;
+  background: linear-gradient(135deg, #e4414127, #4f2af344);
+}
+/* .gradientBgFront {
+  background: #050510;
+  margin: 1px;
+  padding: 20px 40px;
+  font-size: 2rem;
+  display: inline-block;
+  border-radius: inherit;
+  color: white;
+} */
 
 /* section {
   padding-top: 96px;
@@ -89,7 +152,7 @@ html {
   }
 }
 
-.scrollSnap {
+/* .scrollSnap {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 }
@@ -97,7 +160,7 @@ html {
 .sectionSnap {
   height: 100vh;
   scroll-snap-align: center;
-}
+} */
 
 .image {
   max-width: calc(230vw + 1670px);
