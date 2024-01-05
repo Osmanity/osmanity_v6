@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="flex flex-row justify-center mb-8 mt-6">
             {/* Footer Links */}
             <div
-              className="flex flex-wrap sm:flex-col space-x-10 justify-center"
+              className="flex flex-wrap sm:flex-row space-x-10 justify-center"
               // style={{ paddingLeft: "90px" }}
             >
               <div
