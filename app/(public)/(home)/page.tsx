@@ -1,7 +1,13 @@
 // "use client";
 
-import Globe from "@/components/Footer/Globe";
 import Hero from "@/components/Hero-section/Hero";
+import CarouselSection from "@/components/Sections/clientCarausel/clientCarusel";
+import ContactUs from "@/components/Sections/contactUs/contactUs";
+import VideoExplainer1 from "@/components/Sections/videoExplainer1/videoExplainer1";
+import VideoExplainer2 from "@/components/Sections/videoExplainer2/videoExplainer2";
+import VideoExplainer3 from "@/components/Sections/videoExplainer3/videoExplainer3";
+import VideoExplainer4 from "@/components/Sections/videoExplainer4/videoExplainer4";
+
 // import { delay } from "@/lib/delay";
 
 export default async function Home() {
@@ -26,6 +32,14 @@ export default async function Home() {
           <Hero />
         </div>
       </div>
+      <VideoExplainer1 />
+      <VideoExplainer4 />
+      <CarouselSection />
+      <VideoExplainer2 />
+      <VideoExplainer3 />
+      <ContactUs />
+      {/* <Globe /> */}
+
       {/* <div className="my-12 md:my-14 sm:my-12 ">
             <p className="text-[16px] leading-[24px] text-[#7d8590]">
               Trusted by&nbsp;↘︎
@@ -56,8 +70,6 @@ export default async function Home() {
         hello
         <div className="h-[1000px] w-80 bg-slate-400"></div>
       </section> */}
-
-      <Globe />
 
       {/* <Footer /> */}
     </div>

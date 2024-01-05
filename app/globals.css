@@ -60,7 +60,7 @@ html {
 }
 
 .fancy-text {
-  background: linear-gradient(90deg, rgb(201, 144, 255), #3e15f3);
+  background: linear-gradient(90deg, #c990ff, #3e15f3);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -121,6 +121,14 @@ html {
   border-radius: 20px;
   background: linear-gradient(135deg, #e4414127, #4f2af344);
 }
+
+.gradientBgVideo {
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e5d8d841, #9c8ce44c);
+  /* This will clip the video if it overflows the rounded corners */
+  /* overflow: hidden;  */
+}
+
 /* .gradientBgFront {
   background: #050510;
   margin: 1px;
