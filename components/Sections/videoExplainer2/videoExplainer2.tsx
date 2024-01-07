@@ -18,6 +18,7 @@ const VideoExplainer3 = () => {
           <video
             className="rounded-xl w-full h-full object-cover"
             autoPlay
+            playsInline
             muted
             loop
           >

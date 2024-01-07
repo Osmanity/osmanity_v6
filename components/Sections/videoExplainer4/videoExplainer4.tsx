@@ -87,6 +87,7 @@ const VideoExplainer4 = () => {
           <video
             className="flex flex-1 rounded-xl w-full h-full gradientBgVideo p-2 md:w-2/5"
             autoPlay
+            playsInline
             muted
             loop
           >

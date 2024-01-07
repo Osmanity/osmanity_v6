@@ -23,7 +23,7 @@ const VideoExplainer3 = () => {
         <div className=" pt-10  xl:mx-32">
           <div className="gradientBgVideo">
             <div className="p-2 justify-center items-center flex">
-              <video className="rounded-xl " autoPlay muted loop>
+              <video className="rounded-xl " autoPlay playsInline muted loop>
                 <source src="/videos/video-4.mp4" type="video/mp4" />
               </video>
             </div>
