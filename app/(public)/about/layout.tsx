@@ -12,15 +12,15 @@ const PublicLayout = ({
   const { userId } = auth();
 
   return (
-    <div className=" text-white min-h-screen relative bg-[#252525] ">
+    <div className=" min-h-screen relative">
       <div className="z-50 sticky top-0 ">
         <div className="absolute">
           <Navbar />
         </div>
       </div>
       {/* <Suspense fallback={<Loading />}> */}
-      <div className="relative flex flex-1 min-h-screen flex-col md:flex-row  text-white  rounded-lg mx-auto overflow-hidden">
-        {splineobj}
+      <div className="relative flex flex-1 min-h-screen flex-col md:flex-row dark:bg-[#050016] dark:text-white bg-[#ececec] text-black  rounded-lg mx-auto overflow-hidden">
+        {/* {splineobj} */}
         {children}
       </div>
       {/* </Suspense> */}
