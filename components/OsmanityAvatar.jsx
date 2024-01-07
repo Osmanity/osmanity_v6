@@ -14,7 +14,7 @@ export function OsmanityAvatar(props) {
   });
 
   const group = useRef();
-  const { nodes, materials } = useGLTF("models/OsmanityAvatar.glb");
+  const { nodes, materials } = useGLTF("models/osmanityAvatar.glb");
   const { animations: standingAnimation } = useFBX(
     "animations/StandingIdle.fbx",
   );
