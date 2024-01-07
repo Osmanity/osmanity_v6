@@ -1,12 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import Navlist from "./NavUtils/Navlist";
 import Navlist2 from "./NavUtils/Navlist2";
 
 type Props = {};
 
-const ProductNav = (props: Props) => {
+const ServiceNav = (props: Props) => {
   const [show, setShow] = useState(false);
+  const router = useRouter();
 
   const handleOnclick = () => {
     if (window.innerWidth < 1024) {
@@ -28,7 +30,9 @@ const ProductNav = (props: Props) => {
   return (
     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
-        onClick={() => setShow(!show)}
+        onClick={() => router.push("/service")}
+        onMouseEnter={() => setShow(!show)}
+        onMouseLeave={() => setShow(show)}
         type="button"
         className={`flex items-center p-1 max-lg:font-semibold  transition ease-in duration-150 max-lg:justify-between max-lg:w-full ${
           show ? "lg:text-neutral-300 " : ""
@@ -159,4 +163,4 @@ const ProductNav = (props: Props) => {
   );
 };
 
-export default ProductNav;
+export default ServiceNav;

@@ -8,7 +8,7 @@ import { useState } from "react";
 import ProfileButton from "../ui/ProfileButton";
 import { Button } from "../ui/button";
 import CoursesNav from "./Courses";
-import ProductNav from "./ProductNav";
+import ProductNav from "./ServiceNav";
 
 import { MenuIcon } from "lucide-react";
 
@@ -26,6 +26,7 @@ import {
 import Image from "next/image";
 
 import { ThemeToggle } from "@/components/ThemeToggle";
+import ServiceNav from "./ServiceNav";
 
 type Props = {};
 
@@ -181,7 +182,7 @@ const Navbar = (props: Props) => {
                     <div className="max-h-screen overflow-y-auto flex ">
                       <nav className="mt-0  text-[15.5px] mb-0 max-lg:py-0">
                         <ul className="flex lg:items-center lg:space-x-2 max-lg:flex-col max-lg:text-neutral-700 max-lg:text-xl max-lg:font-medium max-lg:space-y-6 max-lg:h-auto  overflow-y-auto ">
-                          <ProductNav />
+                          <ServiceNav />
 
                           <li onClick={() => router.push("/about")}>
                             <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
