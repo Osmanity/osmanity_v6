@@ -23,6 +23,13 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(public)/blogs/[id]/page.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/(public)/blogs/[id]/page.jsx",
+    "helper/CameraPositionLogger.jsx"
+  ],
   "exclude": ["node_modules"]
 }
