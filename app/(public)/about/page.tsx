@@ -6,12 +6,17 @@ import { Canvas } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import Interface from "./Interface/Interface";
 
+import { ScrollManager } from "@/components/ScrollManager";
+import { framerMotionConfig } from "@/lib/config";
+import { MotionConfig } from "framer-motion";
+
 type Props = {};
 
-const page = async (props: Props) => {
+const page = (props: Props) => {
   // await delay(5000);
   const [section, setSection] = useState(0);
   const [menuOpened, setMenuOpened] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   useEffect(() => {
     setMenuOpened(false);
@@ -19,21 +24,44 @@ const page = async (props: Props) => {
 
   return (
     <div className="h-screen w-full">
-      <Canvas shadows camera={{ position: [-2, 0.5, 5], fov: 45 }}>
-        <color attach="background" args={["#ececec"]} />
-        {/* <color attach="background" args={["#000000"]} /> */}
-        <ScrollControls pages={4} damping={0.1}>
-          <Scroll>
-            {/* <Experience section={section} menuOpened={menuOpened} /> */}
-            <Experience />
-          </Scroll>
-          <Scroll html>
-            <Interface />
-          </Scroll>
-        </ScrollControls>
-      </Canvas>
+      <MotionConfig
+        transition={{
+          ...framerMotionConfig,
+        }}
+      >
+        <Canvas shadows camera={{ position: [-1, 0.6, 5], fov: 43 }}>
+          <color attach="background" args={["#ececec"]} />
+          {/* <color attach="background" args={["#000000"]} /> */}
+          <ScrollControls pages={4} damping={0.1}>
+            <ScrollManager section={section} onSectionChange={setSection} />
+            <Scroll>
+              {/* <Experience menuOpened={menuOpened} /> */}
+              <Experience section={section} isFormSubmitted={isFormSubmitted} />
+            </Scroll>
+            <Scroll html>
+              <Interface onFormSubmit={setIsFormSubmitted} />
+            </Scroll>
+          </ScrollControls>
+        </Canvas>
 
-      {/* <div className=" absolute z-5 flex flex-1 flex-col  w-full items-start justify-center bg-gradient-to-l from-black/70 from-30% via-black/50 via-100% sm:via-80% p-10 h-full">
+        {/* fix: the hydration error if it appers */}
+        {/* todo: create a new page and place this OSguide avatar there instead as a solution */}
+        {/* <>
+          <Loader />
+          <Leva />
+          <UI hidden />
+          <Canvas shadows camera={{ position: [0, 0, 1], fov: 30 }}>
+            <ExperienceOSGuide />
+          </Canvas>
+        </> */}
+        {/* <Menu
+          onSectionChange={setSection}
+          menuOpened={menuOpened}
+          setMenuOpened={setMenuOpened}
+        />
+        <Cursor /> */}
+
+        {/* <div className=" absolute z-5 flex flex-1 flex-col  w-full items-start justify-center bg-gradient-to-l from-black/70 from-30% via-black/50 via-100% sm:via-80% p-10 h-full">
         <h2 className="sm:text-6xl text-2xl font-semibold">
           {"Hi! I'm Ibrahim Osman:"}
           <TypeAnimation
@@ -66,6 +94,7 @@ const page = async (props: Props) => {
           of engineering and as a designer.
         </p>
       </div> */}
+      </MotionConfig>
     </div>
   );
 };

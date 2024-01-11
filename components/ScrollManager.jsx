@@ -1,3 +1,5 @@
+"use client";
+
 import { useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { gsap } from "gsap";
@@ -24,7 +26,7 @@ export const ScrollManager = (props) => {
         isAnimating.current = false;
       },
     });
-  }, [section]);
+  }, [section, data.el.clientHeight]);
 
   useFrame(() => {
     if (isAnimating.current) {
@@ -32,15 +34,9 @@ export const ScrollManager = (props) => {
       return;
     }
 
-    const curSection = Math.floor(data.scroll.current * data.pages);
-    if (data.scroll.current > lastScroll.current && curSection === 0) {
-      onSectionChange(1);
-    }
-    if (
-      data.scroll.current < lastScroll.current &&
-      data.scroll.current < 1 / (data.pages - 1)
-    ) {
-      onSectionChange(0);
+    const curSection = Math.round(data.scroll.current * (data.pages - 1));
+    if (curSection !== section) {
+      onSectionChange(curSection);
     }
     lastScroll.current = data.scroll.current;
   });

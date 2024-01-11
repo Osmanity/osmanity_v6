@@ -1,3 +1,5 @@
+"use client";
+
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useControls } from "leva";
@@ -14,7 +16,9 @@ export function OsmanityAvatar(props) {
   });
 
   const group = useRef();
-  const { nodes, materials } = useGLTF("models/osmanityAvatar.glb");
+  const { nodes, materials } = useGLTF("models/OsmanityAvatar.glb");
+
+  const { animations: GangnamStyle } = useFBX("animations/GangnamStyle.fbx");
   const { animations: standingAnimation } = useFBX(
     "animations/StandingIdle.fbx",
   );
@@ -69,6 +73,7 @@ export function OsmanityAvatar(props) {
     "animations/OS_ani/Waving.fbx",
   );
 
+  GangnamStyle[0].name = "Gangnam Style";
   standingAnimation[0].name = "Standing";
   // fallingAnimation[0].name = "Falling";
 
@@ -95,6 +100,7 @@ export function OsmanityAvatar(props) {
 
   const { actions } = useAnimations(
     [
+      GangnamStyle[0],
       acknowledgingAnimation[0],
       agreeingAnimation[0],
       angryAnimation[0],
@@ -131,12 +137,34 @@ export function OsmanityAvatar(props) {
   // useEffect(() => {
   //   actions["Agreeing"].reset().fadeIn(0.5).play();
   // }, []);
+
   useEffect(() => {
     actions[animation]?.reset().fadeIn(0.5).play();
     return () => {
       actions[animation]?.reset().fadeOut(0.5);
     };
   }, [animation]);
+
+  // useEffect(() => {
+  //   // Stop all current animations
+  //   Object.values(actions).forEach((action) => {
+  //     action.fadeOut(0.5);
+  //   });
+
+  //   // Wait for the fade-out to complete before starting the new animation
+  //   const timeoutId = setTimeout(() => {
+  //     if (actions[animation]) {
+  //       actions[animation].reset().fadeIn(0.5).play();
+  //     }
+  //   }, 500); // The delay should match the fadeOut duration
+
+  //   return () => {
+  //     clearTimeout(timeoutId);
+  //     if (actions[animation]) {
+  //       actions[animation].fadeOut(0.5);
+  //     }
+  //   };
+  // }, [animation, actions]);
 
   // useEffect(() => {
   //   Object.values(materials).forEach((material) => {
@@ -147,67 +175,69 @@ export function OsmanityAvatar(props) {
     <group {...props} ref={group} dispose={null}>
       {/* If you use this version "three": "0.146.0", delete this below group to correct the avatar roation  */}
       <group rotation-x={-Math.PI / 2}>
-        <primitive object={nodes.Hips} />
-        <skinnedMesh
-          name="EyeLeft"
-          geometry={nodes.EyeLeft.geometry}
-          material={materials.Wolf3D_Eye}
-          skeleton={nodes.EyeLeft.skeleton}
-          morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary}
-          morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
-        />
-        <skinnedMesh
-          name="EyeRight"
-          geometry={nodes.EyeRight.geometry}
-          material={materials.Wolf3D_Eye}
-          skeleton={nodes.EyeRight.skeleton}
-          morphTargetDictionary={nodes.EyeRight.morphTargetDictionary}
-          morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
-        />
-        <skinnedMesh
-          name="Wolf3D_Head"
-          geometry={nodes.Wolf3D_Head.geometry}
-          material={materials.Wolf3D_Skin}
-          skeleton={nodes.Wolf3D_Head.skeleton}
-          morphTargetDictionary={nodes.Wolf3D_Head.morphTargetDictionary}
-          morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
-        />
-        <skinnedMesh
-          name="Wolf3D_Teeth"
-          geometry={nodes.Wolf3D_Teeth.geometry}
-          material={materials.Wolf3D_Teeth}
-          skeleton={nodes.Wolf3D_Teeth.skeleton}
-          morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
-          morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
-        />
-        <skinnedMesh
-          geometry={nodes.Wolf3D_Hair.geometry}
-          material={materials.Wolf3D_Hair}
-          skeleton={nodes.Wolf3D_Hair.skeleton}
-        />
-        <skinnedMesh
-          geometry={nodes.Wolf3D_Body.geometry}
-          material={materials.Wolf3D_Body}
-          skeleton={nodes.Wolf3D_Body.skeleton}
-        />
-        <skinnedMesh
-          geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
-          material={materials.Wolf3D_Outfit_Bottom}
-          skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
-        />
-        <skinnedMesh
-          geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
-          material={materials.Wolf3D_Outfit_Footwear}
-          skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
-        />
-        <skinnedMesh
-          geometry={nodes.Wolf3D_Outfit_Top.geometry}
-          material={materials.Wolf3D_Outfit_Top}
-          skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
-        />
+        <group>
+          <primitive object={nodes.Hips} />
+          <skinnedMesh
+            name="EyeLeft"
+            geometry={nodes.EyeLeft.geometry}
+            material={materials.Wolf3D_Eye}
+            skeleton={nodes.EyeLeft.skeleton}
+            morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary}
+            morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
+          />
+          <skinnedMesh
+            name="EyeRight"
+            geometry={nodes.EyeRight.geometry}
+            material={materials.Wolf3D_Eye}
+            skeleton={nodes.EyeRight.skeleton}
+            morphTargetDictionary={nodes.EyeRight.morphTargetDictionary}
+            morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
+          />
+          <skinnedMesh
+            name="Wolf3D_Head"
+            geometry={nodes.Wolf3D_Head.geometry}
+            material={materials.Wolf3D_Skin}
+            skeleton={nodes.Wolf3D_Head.skeleton}
+            morphTargetDictionary={nodes.Wolf3D_Head.morphTargetDictionary}
+            morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
+          />
+          <skinnedMesh
+            name="Wolf3D_Teeth"
+            geometry={nodes.Wolf3D_Teeth.geometry}
+            material={materials.Wolf3D_Teeth}
+            skeleton={nodes.Wolf3D_Teeth.skeleton}
+            morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
+            morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
+          />
+          <skinnedMesh
+            geometry={nodes.Wolf3D_Hair.geometry}
+            material={materials.Wolf3D_Hair}
+            skeleton={nodes.Wolf3D_Hair.skeleton}
+          />
+          <skinnedMesh
+            geometry={nodes.Wolf3D_Body.geometry}
+            material={materials.Wolf3D_Body}
+            skeleton={nodes.Wolf3D_Body.skeleton}
+          />
+          <skinnedMesh
+            geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
+            material={materials.Wolf3D_Outfit_Bottom}
+            skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
+          />
+          <skinnedMesh
+            geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
+            material={materials.Wolf3D_Outfit_Footwear}
+            skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
+          />
+          <skinnedMesh
+            geometry={nodes.Wolf3D_Outfit_Top.geometry}
+            material={materials.Wolf3D_Outfit_Top}
+            skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
+          />
+        </group>
       </group>
     </group>
   );
 }
 
-useGLTF.preload("models/OsmanityAvatar..glb");
+useGLTF.preload("models/OsmanityAvatar.glb");
