@@ -189,14 +189,10 @@ const Navbar = (props: Props) => {
                               About
                             </a>
                           </li>
-                          <li onClick={() => router.push("/skills")}>
-                            <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
-                              Skills
-                            </a>
-                          </li>
+
                           <li onClick={() => router.push("/projects")}>
                             <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
-                              Project
+                              Projects
                             </a>
                           </li>
                           {/* <li>
@@ -238,14 +234,10 @@ const Navbar = (props: Props) => {
                         About
                       </a>
                     </li>
-                    <li onClick={() => router.push("/skills")}>
-                      <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
-                        Skills
-                      </a>
-                    </li>
+
                     <li onClick={() => router.push("/projects")}>
                       <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
-                        Project
+                        Projects
                       </a>
                     </li>
                     {/* <li>
