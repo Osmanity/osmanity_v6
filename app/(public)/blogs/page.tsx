@@ -1,4 +1,4 @@
-import BlogSidebar from "@/components/Blogsidebar/BlogSidebar";
+import BlogSidebar from "@/components/BlogSidebar/BlogSidebar";
 import Image from "next/image";
 import Link from "next/link";
 import { posts } from "../../../constants/posts";
