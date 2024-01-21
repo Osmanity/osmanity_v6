@@ -17,11 +17,12 @@ const facialExpressions = {
     viseme_kk: 0.37,
     viseme_CH: 0.07,
     viseme_I: 0.76,
-    browInnerUp: 0.11,
-    mouthFrownLeft: 0.42,
-    mouthFrownRight: 0.42,
-    mouthShrugLower: 0.58,
-    cheekPuff: 0.21,
+    browInnerUp: 0.10999999999999992,
+    mouthShrugLower: 0.5799999999999992,
+    mouthShrugUpper: 0.46,
+    cheekPuff: 0.20999999999999983,
+    mouthSmileLeft: 0.19,
+    mouthSmileRight: 0.19,
   },
   smile: {
     browInnerUp: 0.17,
@@ -126,7 +127,7 @@ export function OsmanityAvatarGuideAssist(props) {
   useEffect(() => {
     // console.log(message);
     if (!message) {
-      setAnimation("Idle");
+      setAnimation("Breathing Idle");
       return;
     }
     setAnimation(message.animation);
@@ -143,7 +144,9 @@ export function OsmanityAvatarGuideAssist(props) {
   const group = useRef();
   const { actions, mixer } = useAnimations(animations, group);
   const [animation, setAnimation] = useState(
-    animations.find((a) => a.name === "Idle") ? "Idle" : animations[0].name, // Check if Idle animation exists otherwise use first animation
+    animations.find((a) => a.name === "Breathing Idle")
+      ? "Breathing Idle"
+      : animations[0].name, // Check if Idle animation exists otherwise use first animation
   );
   useEffect(() => {
     actions[animation]

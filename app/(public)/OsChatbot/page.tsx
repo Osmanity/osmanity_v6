@@ -9,7 +9,7 @@ const page = () => {
   return (
     <div className="h-screen w-full relative">
       {/* <Loader /> */}
-      <Leva hidden={false} />
+      <Leva hidden={true} />
       <UI hidden={false} />
       <Canvas shadows camera={{ position: [0, 0, 1], fov: 30 }}>
         <ExperienceOSGuide />
