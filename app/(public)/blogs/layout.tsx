@@ -96,7 +96,9 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
           </svg>
         </div>
         <div id="bubbles" className="bg-white/20" ref={bubblesContainerRef} />
+
         {children}
+
         <Footer />
       </div>
     </div>
