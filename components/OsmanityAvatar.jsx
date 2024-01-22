@@ -11,13 +11,11 @@ export function OsmanityAvatar(props) {
   const { headFollow, cursorFollow, wireframe } = useControls({
     headFollow: false,
     cursorFollow: false,
-
     wireframe: false,
   });
 
   const group = useRef();
-  const { nodes, materials } = useGLTF("models/OsmanityAvatar.glb");
-
+  const { nodes, materials } = useGLTF("models/osmanityAvatar.glb");
   const { animations: GangnamStyle } = useFBX("animations/GangnamStyle.fbx");
   const { animations: standingAnimation } = useFBX(
     "animations/StandingIdle.fbx",
@@ -240,4 +238,4 @@ export function OsmanityAvatar(props) {
   );
 }
 
-useGLTF.preload("models/OsmanityAvatar.glb");
+useGLTF.preload("models/osmanityAvatar.glb");
