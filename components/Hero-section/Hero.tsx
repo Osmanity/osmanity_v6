@@ -18,7 +18,7 @@ const Hero = () => {
   const [hovered1, setHovered1] = useState<boolean>(false);
 
   return (
-    <div className="relative py-40 min-h-[880px] sm:min-h-[1000px] max-w-[1280px]  lg:pt-32 md:px-10 mx-auto pt-16 z-30 ">
+    <div className="relative py-40 min-h-[940px] sm:min-h-[1000px] max-w-[1280px]  lg:pt-32 md:px-10 mx-auto pt-16 z-30 ">
       {/* <img
         className="absolute right-0 w-1/4 h-auto hero-drone top-28 xl:right-0"
         width="500"
@@ -42,9 +42,9 @@ const Hero = () => {
       {/* <div className="absolute top-0 left-0 z-50 w-full min-h-[880px] sm:min-h-[1000px] bg-black/30 lg:bg-transparent " /> */}
 
       <div className="flex ">
-        <div className="absolute z-50 pt-32  mt-28 max-md:px-4 ">
+        <div className="absolute z-50 pt-32  mt-20 max-md:px-4 ">
           <div className="h-20 sm:h-auto">
-            <h1 className="relative text-center sm:text-left min-[420px]:text-[7vw] text-[8vw] lg:text-7xl  max-sm:leading-[30px] max-md:leading-[80px]  font-semibold text-white">
+            <h1 className="relative text-center sm:text-left  text-6xl lg:text-7xl  max-sm:leading-[50px] max-md:leading-[80px]  font-semibold text-white">
               {" "}
               <span className="fancy-text">Service</span> We Provide:
             </h1>
@@ -99,7 +99,7 @@ const Hero = () => {
           >
 
           </div> */}
-          <p className=" relative z-50 text-[5vw] min-[420px]:text-[4vw]  lg:text-[30px] text-center sm:text-left leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[40px] mb-5 md:mb-12 md:10/12  lg:w-8/12 text-white/50  mt-2">
+          <p className=" relative z-50 text-[5vw] min-[420px]:text-[4vw]  lg:text-[30px] text-center sm:text-left leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[40px] mb-5 md:mb-12 md:10/12  lg:w-8/12 text-white/50  mt-20">
             Our vision is to bring innovative and effective solutions to
             real-world problems and make it a reality. Our ultimate goal is to
             create problem-solving software that not only streamlines processes
@@ -107,12 +107,12 @@ const Hero = () => {
           </p>
           <div className="flex lg:w-11/12 md:space-x-5 max-md:flex-col">
             <form action="">
-              <div className="grid max-md:grid-rows-2 md:grid-cols-2">
+              <div className="grid max-md:grid-rows-2 md:grid-cols-2 md:border-[1px] md:border-[#6e40c9] md:overflow-hidden md:rounded-md">
                 <dl>
                   <dd>
                     <input
-                      className="h-12 focus:outline-none max-md:rounded-md md:rounded-s-md right-0 w-full placeholder:text-[16px] pl-3"
-                      placeholder="Email address"
+                      className="h-[60px] focus:outline-none max-md:rounded-md  right-0 w-full placeholder:text-[16px]  pl-3 dark:bg-white/50 dark:text-white dark:placeholder:text-white bg-black/20 "
+                      placeholder="Email"
                       type="email"
                       name="user_email"
                       id="user_email"
@@ -123,7 +123,7 @@ const Hero = () => {
                 </dl>
                 <button
                   type="button"
-                  className="mb-10 md:mb-0 py-3 w-full home-campaign-signup-button text-[16px] max-md:rounded-md md:rounded-e-md text-white font-semibold"
+                  className="mb-10 md:mb-0 py-4 px-1 w-full home-campaign-signup-button font-bold text-[16px] max-md:rounded-md md:rounded-e-sm text-white "
                 >
                   Sign up for Osmanity
                 </button>
@@ -134,7 +134,7 @@ const Hero = () => {
               onMouseEnter={() => setHovered1(true)}
               onMouseLeave={() => setHovered1(false)}
               href=""
-              className="flex items-center w-full md:w-auto justify-center text-[16px] py-3 px-5 max-md:mt-4 rounded-md border-[#ae88f9] border-[1.5px] text-white"
+              className="flex items-center w-full md:w-auto justify-center font-semibold text-[16px] py-4 px-5 max-md:mt-4 rounded-md border-[#6e40c9] border-[1.5px] text-white"
             >
               Contact
               <svg
