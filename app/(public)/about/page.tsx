@@ -6,6 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import Interface from "./Interface/Interface";
 
+import DotIndicator from "@/components/DotIndicator";
 import { ScrollManager } from "@/components/ScrollManager";
 import { framerMotionConfig } from "@/lib/config";
 import { MotionConfig } from "framer-motion";
@@ -18,12 +19,14 @@ const page = (props: Props) => {
   const [menuOpened, setMenuOpened] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
+  const totalSections = 4; // Update this based on the actual number of sections you have
+
   useEffect(() => {
     setMenuOpened(false);
   }, [section]);
 
   return (
-    <div className="h-screen w-full">
+    <div className="h-screen w-full relative">
       <MotionConfig
         transition={{
           ...framerMotionConfig,
@@ -43,6 +46,26 @@ const page = (props: Props) => {
             </Scroll>
           </ScrollControls>
         </Canvas>
+        <DotIndicator sections={totalSections} currentSection={section} />
+
+        {/* mouse down animation */}
+        <div className="absolute bottom-0 left-0 pt-10 flex justify-end items-center ">
+          <div className="mouse_scroll flex justify-center items-center flex-col">
+            {/* <h1 className="leading-4 font-bold flex text-center animate-pulse text-black/60 text-lg">
+          Scroll Down
+        </h1> */}
+            <div className="mt-2 pl-1 hidden sm:flex ">
+              <div className="mouse animate-accordion-down text-black/60">
+                <div className="wheel "></div>
+              </div>
+            </div>
+            <div className="mb-2 sm:mb-8 -mr-14 sm:mr-0">
+              <span className="m_scroll_arrows unu"></span>
+              <span className="m_scroll_arrows doi"></span>
+              <span className="m_scroll_arrows trei"></span>
+            </div>
+          </div>
+        </div>
 
         {/* fix: the hydration error if it appers */}
         {/* todo: create a new page and place this OSguide avatar there instead as a solution */}
