@@ -26,7 +26,7 @@ const Hero = () => {
       </div>
       <div className="z-10">
         <div className={styles.content}>
-          <div className="mx-auto max-w-[1400px] bg-cover relative z-10 py-10 px-10 ">
+          <div className="mx-auto max-w-[1400px] bg-cover relative z-10  ">
             <div className="grid md:grid-cols-4 lg:grid-cols-6 gap-x-0 md:gap-x-6 gap-5">
               {topPosts.map((post, index) => (
                 <div
@@ -114,6 +114,7 @@ const Hero = () => {
               ))}
             </div>
           </div>
+
           <BlogSidebar />
         </div>
       </div>

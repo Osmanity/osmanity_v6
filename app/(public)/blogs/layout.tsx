@@ -63,7 +63,7 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
           <Navbar />
         </div>
       </div>
-      <div className="overflow-hidden  min-h-screen relative">
+      <div className="overflow-hidden  min-h-screen relative ">
         <div className="absolute w-full h-full top-0 left-0 z-[5]">
           <div className="glow" />
           <svg
@@ -96,8 +96,9 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
           </svg>
         </div>
         <div id="bubbles" className="bg-white/20" ref={bubblesContainerRef} />
-
-        {children}
+        <div className="lg:container lg:mx-auto lg:max-w-9xl px-8">
+          {children}
+        </div>
 
         <Footer />
       </div>
