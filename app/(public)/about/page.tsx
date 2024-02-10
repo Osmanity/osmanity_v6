@@ -49,7 +49,7 @@ const page = (props: Props) => {
         <DotIndicator sections={totalSections} currentSection={section} />
 
         {/* mouse down animation */}
-        <div className="absolute bottom-0 left-0 pt-10 flex justify-end items-center ">
+        <div className=" bottom-0 absolute left-0 pt-10 flex justify-end items-center ">
           <div className="mouse_scroll flex justify-center items-center flex-col">
             {/* <h1 className="leading-4 font-bold flex text-center animate-pulse text-black/60 text-lg">
           Scroll Down

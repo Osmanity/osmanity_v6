@@ -34,7 +34,7 @@ Section.displayName = "Section";
 
 const Interface = ({ onFormSubmit }: any) => {
   return (
-    <div className="flex flex-col items-center w-screen">
+    <div className="flex flex-col items-center w-screen px-[70px]">
       <AboutSection />
       <SkillsSection />
       <Section>
