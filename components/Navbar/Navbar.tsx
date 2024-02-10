@@ -46,9 +46,9 @@ const Navbar = (props: Props) => {
   // });
 
   return (
-    <div className="w-screen mx-auto select-none ">
-      <div className="dark:text-white text-black  bg-gradient-to-b dark:from-black from-white from-30% dark:via-black/50 via-white/50 via-80% pb-4  py-2 px-10 z-[999] sticky top-0 ">
-        <div className="flex flex-row items-center justify-center">
+    <div className="w-screen mx-auto select-none  ">
+      <div className="dark:text-white text-black  bg-gradient-to-b dark:from-black from-white from-30% dark:via-black/50 via-white/50 via-80% pb-4  py-2  z-[999] sticky top-0 ">
+        <div className="flex flex-row items-center justify-center lg:container ">
           <Link href={"/"} className="opacity-100 hover:opacity-70">
             {resolvedTheme === "dark" ? (
               <Image
