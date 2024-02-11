@@ -84,9 +84,7 @@ const CarouselSection = () => {
       <div
         className="
             md:pb-10 
-            items-center 
-            justify-center 
-            flex 
+            text-center
             text-3xl
             sm:text-4xl 
             font-bold 

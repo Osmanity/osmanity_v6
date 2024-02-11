@@ -30,9 +30,7 @@ const VideoExplainer3 = () => {
           <div
             className="
                 max-[445px]:text-start 
-                justify-center 
                 text-center
-                flex 
                 text-3xl 
                 sm:text-4xl 
                 font-bold 
