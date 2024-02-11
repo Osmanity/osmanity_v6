@@ -78,7 +78,7 @@ const VideoExplainer4 = () => {
           <button
             className="bg-gradient-to-r
               from-[#c990ff]
-              to-[#3e15f3] text-white p-4 justify-center flex md:w-1/3 rounded-lg hover:opacity-75"
+              to-[#3e15f3] text-white p-4 justify-center flex md:w-1/3 rounded-lg hover:opacity-75 font-bold"
           >
             Get Started
           </button>
