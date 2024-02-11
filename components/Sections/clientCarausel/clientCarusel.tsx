@@ -82,15 +82,21 @@ const CarouselSection = () => {
   return (
     <div className="p-4 sm:container">
       <div
-        className="items-center justify-center flex text-3xl font-bold md:pb-10 
-        bg-gradient-to-r
+        className="
+            md:pb-10 
+            items-center 
+            justify-center 
+            flex 
+            text-3xl
+            sm:text-4xl 
+            font-bold 
+            text-gradient
+            bg-gradient-to-r
             from-[#c990ff]
             to-[#3e15f3]
-        bg-clip-text
-        text-transparent
-
-        
-        "
+            bg-clip-text
+            text-transparent
+          "
       >
         More than 30+ brands have built their business with us!
       </div>

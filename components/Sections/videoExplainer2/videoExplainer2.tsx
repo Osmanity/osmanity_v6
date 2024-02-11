@@ -28,13 +28,19 @@ const VideoExplainer3 = () => {
 
         <div className="flex-col border p-4 rounded-xl md:w-2/5">
           <div
-            className="text-4xl flex justify-center max-[445px]:text-start text-center
-                sm:text-4xl
+            className="
+                max-[445px]:text-start 
+                justify-center 
+                text-center
+                flex 
+                text-3xl 
+                sm:text-4xl 
+                font-bold 
+                text-gradient
                 bg-gradient-to-r
-              from-[#c990ff]
-              to-[#3e15f3]
+                from-[#c990ff]
+                to-[#3e15f3]
                 bg-clip-text
-                font-bold
                 text-transparent
                 "
           >
