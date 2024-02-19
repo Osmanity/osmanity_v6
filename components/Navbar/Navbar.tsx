@@ -251,6 +251,11 @@ const Navbar = (props: Props) => {
                       </a>
                     </li>
                     <CoursesNav />
+                    <li onClick={() => router.push("/docs")}>
+                      <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
+                        Docs
+                      </a>
+                    </li>
 
                     {/* <OpenSourceNav /> */}
                   </ul>
