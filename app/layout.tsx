@@ -3,6 +3,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html
         lang="en"
-        className="overflow-hidden-all dark:bg-black bg-white dark:text-white text-black "
+        className="overflow-hidden-all dark:bg-black bg-white dark:text-white  "
       >
         <body className={`${inter.className} `}>
           {/* <Suspense fallback={<Loading />}> */}

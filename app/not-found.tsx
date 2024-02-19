@@ -2,9 +2,8 @@
 
 import Footer from "@/components/Footerv2";
 import Navbar from "@/components/Navbar/Navbar";
-import Link from "next/link";
-import React from "react";
 import { useRive } from "@rive-app/react-canvas";
+import Link from "next/link";
 
 type Props = {};
 
@@ -18,7 +17,7 @@ export default function NotFound({}: Props) {
     onLoad: () => console.log("loading"),
   });
   return (
-    <div className="  min-h-screen relative bg-black text-white ">
+    <div className="  min-h-screen relative  ">
       <div className="z-50 sticky top-0 pb-12 sm:pb-0">
         <div className="absolute">
           <Navbar />
