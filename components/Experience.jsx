@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 // import { Loader, OrbitControls } from "@react-three/drei";
 // import { Leva } from "leva";
 import { framerMotionConfig } from "@/lib/config";
+import { useTheme } from "next-themes";
 
 const getAnimationForSection = (section) => {
   switch (section) {
@@ -45,10 +46,10 @@ const getAnimationValues = (section) => {
       break;
     // Add more cases for other sections as needed
     case 2:
-      values = { z: -8, y: -11, x: -3 };
+      values = { z: -8, y: -11.7, x: -3 };
       break;
     case 3:
-      values = { z: -8, y: -16, x: 2 };
+      values = { z: -8, y: -16, x: 1.5 };
       break;
     // ...and so on for more sections
   }
@@ -57,6 +58,8 @@ const getAnimationValues = (section) => {
 };
 
 export const Experience = (props) => {
+  const { resolvedTheme } = useTheme();
+
   const { section, menuOpened, isFormSubmitted } = props;
   const { viewport } = useThree();
 
@@ -121,9 +124,19 @@ export const Experience = (props) => {
       {/* <UI hidden /> */}
       {/* <Sky /> */}
       {/* <OrbitControls /> */}
-      <ambientLight intensity={0.9} />
+      {/* <ambientLight intensity={0.9} /> */}
+
+      {resolvedTheme === "dark" ? (
+        <ambientLight intensity={0.2} />
+      ) : (
+        <ambientLight intensity={0.9} />
+      )}
       <directionalLight position={[-5, 3, 5]} intensity={0.2} />
-      <Environment preset="city" />
+      {resolvedTheme === "dark" ? (
+        <Environment preset="studio" />
+      ) : (
+        <Environment preset="city" />
+      )}
       {/* SKILLS */}
       <motion.group
         position={[0.6, -3, -6.4]}
@@ -203,15 +216,17 @@ export const Experience = (props) => {
           </mesh>
         )} */}
           <mesh scale={100} rotation-x={-Math.PI * 0.5} position-y={-0.001}>
-            {/* <planeGeometry /> */}
-            {/* <meshStandardMaterial color="white" /> */}
-            {/* <meshStandardMaterial color="black" /> */}
-            <planeBufferGeometry
+            <planeGeometry
               attach="geometry"
               args={[viewport.width, viewport.height]}
             />
-            <meshBasicMaterial attach="material" color="white" />
+            {resolvedTheme === "dark" ? (
+              <meshBasicMaterial attach="material" color="#393939" />
+            ) : (
+              <meshBasicMaterial attach="material" color="white" />
+            )}
           </mesh>
+
           {/* <boxGeometry />
         <meshNormalMaterial /> */}
           {/* </mesh> */}

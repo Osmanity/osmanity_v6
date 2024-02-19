@@ -19,7 +19,7 @@ const DotIndicator: React.FC<DotIndicatorProps> = ({
           }}
           className={`w-2 h-4 rounded-full ${
             index === currentSection
-              ? "bg-black/60 h-6 animate-pulse"
+              ? "dark:bg-white bg-black h-6 animate-pulse"
               : "bg-gray-400"
           }`}
         />

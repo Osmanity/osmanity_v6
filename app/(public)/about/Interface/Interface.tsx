@@ -53,10 +53,12 @@ const AboutSection = () => {
       <h1 className="text-6xl font-extrabold leading-snug">
         Hi, I'm
         <br />
-        <span className="bg-white px-1 italic">Ibrahim Osman</span>
+        <span className="dark:bg-black bg-white px-1 italic">
+          Ibrahim Osman
+        </span>
       </h1>
       <motion.p
-        className="text-lg text-gray-600 mt-4"
+        className="text-lg dark:text-white/80 text-gray-600 mt-4"
         initial={{
           opacity: 0,
           y: 25,
@@ -77,8 +79,7 @@ const AboutSection = () => {
       </motion.p>
       <Link href="/OsChatbot">
         <motion.button
-          className={`bg-indigo-600 text-white py-4 px-8 
-      rounded-lg font-bold text-lg mt-16`}
+          className={`bg-gradient-to-r from-[#c990ff] to-[#3e15f3] text-white py-4 px-8 rounded-lg font-bold text-lg mt-16`}
           initial={{
             opacity: 0,
             y: 25,
@@ -179,7 +180,7 @@ const SkillsSection = () => {
             {skills.map((skill, index) => (
               <div className="w-64" key={index}>
                 <motion.h3
-                  className="text-xl font-bold text-gray-800"
+                  className="text-xl font-bold dark:text-white text-gray-800"
                   initial={{
                     opacity: 0,
                   }}
@@ -195,9 +196,9 @@ const SkillsSection = () => {
                 >
                   {skill.title}
                 </motion.h3>
-                <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
+                <div className="h-2 w-full dark:bg-gray-200 bg-black/40  rounded-full mt-2">
                   <motion.div
-                    className="h-full bg-indigo-500 rounded-full "
+                    className="h-full bg-[#3e15f3] rounded-full "
                     style={{ width: `${skill.level}%` }}
                     initial={{
                       scaleX: 0,
@@ -219,13 +220,13 @@ const SkillsSection = () => {
           </div>
         </div>
         {/* languages div*/}
-        <div className="w-1/4 pl-5 ">
+        <div className="w-2/5 pl-0 ">
           <h2 className="text-5xl font-bold">Languages</h2>
           <div className="mt-8 space-y-4">
             {languages.map((lng, index) => (
               <div className="w-64" key={index}>
                 <motion.h3
-                  className="text-xl font-bold text-gray-800"
+                  className="text-xl font-bold dark:text-white text-gray-800"
                   initial={{
                     opacity: 0,
                   }}
@@ -241,9 +242,9 @@ const SkillsSection = () => {
                 >
                   {lng.title}
                 </motion.h3>
-                <div className="h-2 w-full bg-gray-200 rounded-full mt-2">
+                <div className="h-2 w-full dark:bg-gray-200 bg-black/40 rounded-full mt-2">
                   <motion.div
-                    className="h-full bg-indigo-500 rounded-full "
+                    className="h-full bg-[#3e15f3] rounded-full "
                     style={{ width: `${lng.level}%` }}
                     initial={{
                       scaleX: 0,
@@ -315,11 +316,11 @@ const ContactSection = ({ onFormSubmit }: any) => {
     <Section>
       <h2 className="text-5xl font-bold">Contact me</h2>
 
-      <div className="mt-8 p-8 rounded-md bg-white w-96 max-w-full">
+      <div className="mt-4 p-4 rounded-md dark:bg-white/50 bg-black/60 w-96 max-w-full">
         <form onSubmit={handleSubmit}>
           <label
             htmlFor="name"
-            className="font-medium text-gray-900 block mb-1"
+            className="font-medium dark:text-gray-900 text-white block mb-1"
           >
             Name
           </label>
@@ -328,12 +329,12 @@ const ContactSection = ({ onFormSubmit }: any) => {
             type="text"
             name="name"
             id="name"
-            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+            className="block w-full rounded-md border-0 dark:text-white text-black dark:bg-black/60 bg-white/60  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
           />
 
           <label
             htmlFor="email"
-            className="font-medium text-gray-900 block mb-1 mt-8"
+            className="font-medium dark:text-gray-900 text-white block mb-1 mt-3"
           >
             Email
           </label>
@@ -342,12 +343,12 @@ const ContactSection = ({ onFormSubmit }: any) => {
             type="email"
             name="email"
             id="email"
-            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+            className="block w-full rounded-md border-0 dark:text-white  text-black dark:bg-black/60 bg-white/60 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
           />
 
           <label
             htmlFor="message"
-            className="font-medium text-gray-900 block mb-1 mt-8"
+            className="font-medium dark:text-gray-900 text-white block mb-1 mt-3"
           >
             Message
           </label>
@@ -355,12 +356,12 @@ const ContactSection = ({ onFormSubmit }: any) => {
           <textarea
             name="message"
             id="message"
-            className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
+            className="h-24 block w-full rounded-md border-0 dark:text-white text-black dark:bg-black/60 bg-white/60  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3"
           />
 
           <button
             type="submit"
-            className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-16"
+            className="bg-gradient-to-r from-[#c990ff] to-[#3e15f3] text-white py-4 px-8 rounded-lg font-bold text-lg mt-6"
           >
             Submit
           </button>

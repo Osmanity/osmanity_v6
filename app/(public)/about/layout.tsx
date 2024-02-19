@@ -19,7 +19,7 @@ const PublicLayout = ({
         </div>
       </div>
       {/* <Suspense fallback={<Loading />}> */}
-      <div className="relative flex flex-1 min-h-screen flex-col md:flex-row dark:bg-[#050016] dark:text-white bg-[#ececec] text-black  rounded-lg mx-auto overflow-hidden">
+      <div className="relative flex flex-1 min-h-screen flex-col md:flex-row dark:bg-black dark:text-white bg-white text-black  rounded-lg mx-auto overflow-hidden">
         {/* {splineobj} */}
         {children}
       </div>

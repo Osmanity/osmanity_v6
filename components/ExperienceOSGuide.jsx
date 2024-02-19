@@ -11,6 +11,7 @@ import { useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { OsmanityAvatarGuideAssist } from "../components/OsmanityAvatarGuideAssist";
 // import { Avatar } from "@/components/Avatar";
+import { useTheme } from "next-themes";
 import { useChat } from "../hooks/useChat";
 
 const Dots = (props) => {
@@ -43,6 +44,13 @@ const Dots = (props) => {
 };
 
 export const ExperienceOSGuide = () => {
+  const { resolvedTheme } = useTheme();
+  let colors;
+  if (resolvedTheme) {
+    colors = "white";
+  } else {
+    colors = "black";
+  }
   const cameraControls = useRef();
   const { cameraZoomed } = useChat();
   const { viewport } = useThree();
@@ -52,6 +60,7 @@ export const ExperienceOSGuide = () => {
 
   useEffect(() => {
     if (cameraZoomed) {
+      // mobile avatar camera x:-0.28, y:0.66,  z:3.26
       cameraControls.current.setLookAt(0, 1.5, 1.5, 0, 1.5, 0, true);
     } else {
       cameraControls.current.setLookAt(0, 2.2, 5, 0, 1.0, 0, true);
@@ -73,16 +82,14 @@ export const ExperienceOSGuide = () => {
         <CameraPositionLogger event="mousedown" />
         <OsmanityAvatarGuideAssist />
         {/* <Avatar /> */}
-        <mesh scale={100} rotation-x={-Math.PI * 0.5} position-y={-0.001}>
-          {/* <planeGeometry /> */}
-          {/* <meshStandardMaterial color="white" /> */}
-          {/* <meshStandardMaterial color="black" /> */}
-          <planeBufferGeometry
+        {/* <mesh scale={100} rotation-x={-Math.PI * 0.5} position-y={-0.001}>
+         
+          <planeGeometry
             attach="geometry"
             args={[viewport.width, viewport.height]}
           />
           <meshBasicMaterial attach="material" color="white" />
-        </mesh>
+        </mesh> */}
       </group>
 
       <ContactShadows opacity={0.7} />

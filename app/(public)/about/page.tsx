@@ -33,7 +33,7 @@ const page = (props: Props) => {
         }}
       >
         <Canvas shadows camera={{ position: [-1, 0.6, 5], fov: 43 }}>
-          <color attach="background" args={["#ececec"]} />
+          {/* <color attach="background" args={["#ececec"]} /> */}
           {/* <color attach="background" args={["#000000"]} /> */}
           <ScrollControls pages={4} damping={0.1}>
             <ScrollManager section={section} onSectionChange={setSection} />
@@ -55,7 +55,7 @@ const page = (props: Props) => {
           Scroll Down
         </h1> */}
             <div className="mt-2 pl-1 hidden sm:flex ">
-              <div className="mouse animate-accordion-down text-black/60">
+              <div className="mouse animate-accordion-down  dark:text-white text-black/60">
                 <div className="wheel "></div>
               </div>
             </div>
