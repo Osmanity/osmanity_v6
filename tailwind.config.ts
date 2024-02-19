@@ -112,5 +112,31 @@ module.exports = withUt({
       }
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [ require("tailwindcss-animate"), require("daisyui")],
+  // todo - implement daisyui into the project AND use these values here:
+  // daisyui: {
+  //   themes: [
+  //     {
+  //       mytheme: {
+  //           "primary": "#9333ea",
+                    
+  //           "secondary": "#c4b5fd",
+                    
+  //           "accent": "#f3e8ff",
+                    
+  //           "neutral": "#c084fc",
+                    
+  //           "base-100": "#111827",
+                    
+  //           "info": "#bfdbfe",
+                    
+  //           "success": "#4ade80",
+                    
+  //           "warning": "#fde047",
+                    
+  //           "error": "#f87171",
+  //       },
+  //     },
+  //   ],
+  // },
 });
