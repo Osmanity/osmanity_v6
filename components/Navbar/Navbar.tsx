@@ -251,7 +251,11 @@ const Navbar = (props: Props) => {
                       </a>
                     </li>
                     <CoursesNav />
-                    <li onClick={() => router.push("/docs")}>
+                    <li
+                      onClick={() =>
+                        router.push("https://docs.osmanity.com/docs")
+                      }
+                    >
                       <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
                         Docs
                       </a>
