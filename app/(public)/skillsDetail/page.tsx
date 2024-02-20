@@ -62,6 +62,16 @@ const TAGS_Ecommerce = [
   "Canva",
 ];
 
+interface InfiniteLoopSliderProps {
+  children: React.ReactNode; // This type is appropriate for anything that can be rendered: numbers, strings, elements, or an array containing these types.
+  duration: number;
+  reverse?: boolean; // Optional prop
+}
+
+interface TagProps {
+  text: string;
+}
+
 const DURATION = 15000;
 const ROWS = 1;
 const TAGS_PER_ROW = 7;
@@ -69,7 +79,11 @@ const TAGS_PER_ROW = 7;
 // const shuffle = (arr) => [...arr].sort(() => 0.5 - Math.random());
 const shuffle = (arr: string[]) => [...arr].sort(() => 0.5 - Math.random());
 
-const InfiniteLoopSlider = ({ children, duration, reverse = false }) => {
+const InfiniteLoopSlider = ({
+  children,
+  duration,
+  reverse = false,
+}: InfiniteLoopSliderProps) => {
   return (
     <div
       className="loop-slider"
@@ -86,15 +100,15 @@ const InfiniteLoopSlider = ({ children, duration, reverse = false }) => {
   );
 };
 
-const Tag = ({ text }) => (
+const Tag = ({ text }: TagProps) => (
   <div className="tag2">
     <span>#</span> {text}
   </div>
 );
 
 function page() {
-  const [frontendTags, setFrontendTags] = useState([]);
-  const [backendTags, setBackendTags] = useState([]);
+  const [frontendTags, setFrontendTags] = useState<string[]>([]);
+  const [backendTags, setBackendTags] = useState<string[]>([]);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
