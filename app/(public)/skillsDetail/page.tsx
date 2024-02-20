@@ -3,7 +3,7 @@ import AppShortcutIcon from "@mui/icons-material/AppShortcut";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import RepeatIcon from "@mui/icons-material/Repeat";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { BiCodeAlt } from "react-icons/bi";
 import { BsFillCpuFill } from "react-icons/bs";
 import { FaRobot } from "react-icons/fa";
@@ -84,14 +84,13 @@ const InfiniteLoopSlider = ({
   duration,
   reverse = false,
 }: InfiniteLoopSliderProps) => {
+  const sliderStyle: CSSProperties = {
+    "--duration": `${duration}ms`,
+    "--direction": reverse ? "reverse" : "normal",
+  } as React.CSSProperties; // Cast to CSSProperties to avoid type errors
+
   return (
-    <div
-      className="loop-slider"
-      style={{
-        "--duration": `${duration}ms`,
-        "--direction": reverse ? "reverse" : "normal",
-      }}
-    >
+    <div className="loop-slider" style={sliderStyle}>
       <div className="inner">
         {children}
         {children}
