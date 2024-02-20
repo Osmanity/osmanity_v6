@@ -66,7 +66,8 @@ const DURATION = 15000;
 const ROWS = 1;
 const TAGS_PER_ROW = 7;
 
-const shuffle = (arr) => [...arr].sort(() => 0.5 - Math.random());
+// const shuffle = (arr) => [...arr].sort(() => 0.5 - Math.random());
+const shuffle = (arr: string[]) => [...arr].sort(() => 0.5 - Math.random());
 
 const InfiniteLoopSlider = ({ children, duration, reverse = false }) => {
   return (
@@ -653,7 +654,7 @@ function page() {
               This is just the tip of the iceberg.
               <br /> I have a lot more experience <br />
               <p className="text-center text-sm sm:text-xl  font-bold   mb-6">
-                Feel to contact me for more details.
+                Feel free to contact me for more details.
               </p>
             </h1>
           </div>
