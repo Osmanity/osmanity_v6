@@ -29,7 +29,11 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/(public)/blogs/[id]/page.jsx",
-    "helper/CameraPositionLogger.jsx"
+    "helper/CameraPositionLogger.jsx",
+    "prettier.config.js",
+    "app/(public)/contactUs/page.js",
+    "components/ContactForm.js",
+    "components/HeroHeading/Hero.js"
   ],
   "exclude": ["node_modules"]
 }
