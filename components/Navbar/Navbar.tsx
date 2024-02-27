@@ -150,7 +150,7 @@ const Navbar = (props: Props) => {
                     <div className="flex  flex-col ">
                       <div className="max-lg:flex justify-center max-lg:border-[1px] max-lg:mr-4 rounded-md max-lg:bg-neutral-800 mt-2">
                         <a
-                          href=""
+                          href="/contactUs"
                           className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold  text-white"
                         >
                           Contact Us!
@@ -269,7 +269,7 @@ const Navbar = (props: Props) => {
                   {/* <div className="max-lg:flex justify-center max-lg:border-[1px] max-lg:mr-4 rounded-md max-lg:bg-neutral-800 "> */}
 
                   <a
-                    href=""
+                    href="/contactUs"
                     className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold mr-1.5 "
                   >
                     Contact Us !
