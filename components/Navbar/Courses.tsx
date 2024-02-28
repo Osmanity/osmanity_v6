@@ -1,9 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 import Navlist from "./NavUtils/Navlist";
-import Navlist2 from "./NavUtils/Navlist2";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 type Props = {};
 
@@ -29,34 +27,46 @@ const CoursesNav = (props: Props) => {
     }
   };
 
+  const pathname = usePathname();
+  let newPathname = "";
+
+  newPathname = pathname;
+  if (pathname.includes("/blog")) {
+    newPathname = "/blog";
+  } else if (pathname.includes("/projects")) {
+    newPathname = "/projects";
+  }
+
   return (
     <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
         onClick={() => setShow(!show)}
         type="button"
-        className={`flex items-center p-1 max-lg:font-semibold  transition ease-in duration-150 max-lg:justify-between max-lg:w-full ${
-          show ? "lg:text-neutral-300 " : ""
-        }`}
+        className={`relative flex mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1     ${
+          newPathname === "/courses"
+            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+            : "border-transparent"
+        } `}
       >
         Courses
-        <svg
-          opacity="0.5"
-          aria-hidden="true"
-          height="16"
-          fill="currentColor"
-          viewBox="0 0 16 16"
-          version="1.1"
-          width="16"
-          data-view-component="true"
-          className={` ml-1 transition-all ease-in duration-200  max-lg:scale-x-125 ${
-            show ? "lg:mt-2 opacity-40 max-lg:0" : "mt-0 max-lg:-rotate-90"
-          }`}
-        >
-          <path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path>
-        </svg>
+        <div className="pt-0.5">
+          <svg
+            opacity="0.5"
+            aria-hidden="true"
+            height="16"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            version="1.1"
+            width="16"
+            data-view-component="true"
+            className={`  transition-all ease-in duration-200  max-lg:scale-x-125 mt-0 max-lg:-rotate-90`}
+          >
+            <path d="M12.78 5.22a.749.749 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.06 0L3.22 6.28a.749.749 0 1 1 1.06-1.06L8 8.939l3.72-3.719a.749.749 0 0 1 1.06 0Z"></path>
+          </svg>
+        </div>
       </button>
       <div
-        className={`relative lg:absolute lg:flex -ml-5 bg-white rounded-md lg:py-4 py-2 transition ease-in duration-150 ${
+        className={`shadow-xl border-2 relative lg:absolute lg:flex -ml-5 bg-white rounded-md lg:py-4 py-2 transition ease-in duration-150 ${
           show ? "opacity-100 " : "opacity-0 invisible max-lg:hidden"
         }`}
       >

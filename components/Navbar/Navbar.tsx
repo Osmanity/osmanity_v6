@@ -3,7 +3,7 @@ import { useAuth } from "@clerk/nextjs";
 import { ShoppingCart } from "lucide-react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import ProfileButton from "../ui/ProfileButton";
 import { Button } from "../ui/button";
@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/sheet";
 import Image from "next/image";
 
-import { ThemeToggle } from "@/components/ThemeToggle";
+import { ThemeToggle } from "../ThemeToggle";
 import ServiceNav from "./ServiceNav";
 
 type Props = {};
@@ -35,6 +35,16 @@ const Navbar = (props: Props) => {
   const { setTheme, resolvedTheme } = useTheme();
   const { userId } = useAuth();
   const router = useRouter();
+
+  const pathname = usePathname();
+  let newPathname = "";
+
+  newPathname = pathname;
+  if (pathname.includes("/blogs")) {
+    newPathname = "/blogs";
+  } else if (pathname.includes("/projects")) {
+    newPathname = "/projects";
+  }
 
   // const { rive, RiveComponent } = useRive({
   //   src: "/assets/riveObj/galactic_button.riv",
@@ -151,7 +161,7 @@ const Navbar = (props: Props) => {
                       <div className="max-lg:flex justify-center max-lg:border-[1px] max-lg:mr-4 rounded-md max-lg:bg-neutral-800 mt-2">
                         <a
                           href="/contactUs"
-                          className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold  text-white"
+                          // className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold  text-white  "
                         >
                           Contact Us!
                         </a>
@@ -227,16 +237,43 @@ const Navbar = (props: Props) => {
               <div className="flex max-lg:flex-col lg:items-center lg:justify-between max-lg:justify-between max-sm:w-10/12 max-sm:mx-auto sm:ml-auto max-lg:w-[320px] lg:w-full max-lg:max-h-[500px]  overflow-y-auto lg:mb-0 max-lg:bg-white max-lg:rounded-lg">
                 <nav className="mt-0  text-[15.5px] mb-0 max-lg:py-10 ">
                   <ul className="flex lg:items-center lg:space-x-2 max-lg:flex-col max-lg:text-neutral-700 max-lg:text-xl max-lg:font-medium max-lg:space-y-6 max-lg:h-auto  overflow-y-auto">
+                    <li onClick={() => router.push("/")}>
+                      <a
+                        // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
+                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                          newPathname === "/"
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            : "border-transparent"
+                        } `}
+                      >
+                        Home
+                      </a>
+                    </li>
+
                     <ProductNav />
 
                     <li onClick={() => router.push("/about")}>
-                      <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
+                      <a
+                        // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
+                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                          newPathname === "/about"
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            : "border-transparent"
+                        } `}
+                      >
                         About
                       </a>
                     </li>
 
                     <li onClick={() => router.push("/projects")}>
-                      <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
+                      <a
+                        // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
+                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                          newPathname === "/projects"
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            : "border-transparent"
+                        } `}
+                      >
                         Projects
                       </a>
                     </li>
@@ -246,7 +283,14 @@ const Navbar = (props: Props) => {
                     </a>
                   </li> */}
                     <li onClick={() => router.push("/blogs")}>
-                      <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
+                      <a
+                        // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
+                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                          newPathname === "/blogs"
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            : "border-transparent"
+                        } `}
+                      >
                         Blogs
                       </a>
                     </li>
@@ -256,7 +300,14 @@ const Navbar = (props: Props) => {
                         router.push("https://docs.osmanity.com/docs")
                       }
                     >
-                      <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
+                      <a
+                        // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
+                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                          newPathname === "/docs"
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            : "border-transparent"
+                        } `}
+                      >
                         Docs
                       </a>
                     </li>
@@ -270,9 +321,14 @@ const Navbar = (props: Props) => {
 
                   <a
                     href="/contactUs"
-                    className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold mr-1.5 "
+                    // className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold mr-1.5 "
+                    className={`relative mt-1 mr-1.5 max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]  pb-1  ${
+                      newPathname === "/contactUs"
+                        ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                        : "border-transparent"
+                    } `}
                   >
-                    Contact Us !
+                    Contact Us!
                   </a>
                   {/* <a href="/contact" className="">
                     <RiveComponent
@@ -284,7 +340,7 @@ const Navbar = (props: Props) => {
 
                   <div className="pl-56" /> */}
                   {/* </div> */}
-                  <div className="border dark:border-white border-black px-0 py-3" />
+                  <div className="border  dark:border-white border-black px-0 py-3" />
                   <div className="flex items-center">
                     <Button
                       variant="ghost"
