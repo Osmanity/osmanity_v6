@@ -63,7 +63,17 @@ const Items = ({ currentItems }) => {
   );
 };
 
-const Posts = ({ className, itemsPerPage, archive = false, params }) => {
+const Posts = ({
+  className,
+  itemsPerPage,
+  archive = false,
+  params,
+}: {
+  className: string;
+  itemsPerPage: number;
+  archive?: boolean;
+  params?: { slug?: string };
+}) => {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
