@@ -35,3 +35,6 @@
 .categoryItem.coding {
   background-color: #5e4fff31;
 }
+.categoryItem.all {
+  border: 1px solid #5e4fff31;
+}

@@ -12,17 +12,16 @@ const PublicLayout = ({
   const { userId } = auth();
 
   return (
-    <div className=" text-white min-h-screen relative bg-[#252525] ">
+    <div className="min-h-screen relative dark:bg-black dark:text-white bg-[#F3F5F8] text-black ">
       <div className="z-50 sticky top-0 ">
         <div className="absolute">
           <Navbar />
         </div>
       </div>
       <div className="relative w-full min-h-screen mx-auto overflow-hidden">
-        {splineobj}
-
         {children}
       </div>
+      {/* {splineobj} */}
       <Footer />
     </div>
   );

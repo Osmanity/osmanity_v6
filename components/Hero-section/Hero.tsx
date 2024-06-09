@@ -18,7 +18,7 @@ const Hero = () => {
   const [hovered1, setHovered1] = useState<boolean>(false);
 
   return (
-    <div className="relative py-40 min-h-[940px] sm:min-h-[1000px] max-w-[1280px]  lg:pt-32 md:px-10 mx-auto pt-16 z-30 ">
+    <div className="relative  py-40 min-h-[940px] sm:min-h-[1000px] max-w-[1280px]  lg:pt-32 md:px-10 mx-auto pt-16 z-30 ">
       {/* <img
         className="absolute right-0 w-1/4 h-auto hero-drone top-28 xl:right-0"
         width="500"
@@ -41,56 +41,60 @@ const Hero = () => {
       </div> */}
       {/* <div className="absolute top-0 left-0 z-50 w-full min-h-[880px] sm:min-h-[1000px] bg-black/30 lg:bg-transparent " /> */}
 
-      <div className="flex ">
+      <div className="flex  ">
         <div className="absolute z-50 pt-32  mt-20 max-md:px-4 ">
           <div className="h-20 sm:h-auto">
-            <h1 className="relative text-center sm:text-left  text-6xl lg:text-7xl  max-sm:leading-[50px] max-md:leading-[80px]  font-semibold text-white">
+            <h1 className="relative text-center sm:text-left  text-6xl lg:text-7xl  max-sm:leading-[50px] max-md:leading-[80px]  font-semibold ">
               {" "}
               <span className="fancy-text">Service</span> We Provide:
             </h1>
             <HeroH1>
               {/* {`Service We Provide: `} */}
+              <div className="dark:text-white text-black">
+                <TypeAnimation
+                  sequence={[
+                    // "- elibom Development", // Types 'One'
+                    // 3000, // Waits 1s
+                    "-💻Web Development", // Types 'One'
+                    3000, // Waits 1s
+                    "-🚀Mobile Development", // Types 'One'
+                    3000, // Waits 1s
 
-              <TypeAnimation
-                sequence={[
-                  // "- elibom Development", // Types 'One'
-                  // 3000, // Waits 1s
-                  "-💻Web Development", // Types 'One'
-                  3000, // Waits 1s
-                  "-🚀Mobile Development", // Types 'One'
-                  3000, // Waits 1s
+                    "-🤖AI Development",
+                    3000,
+                    "-🛍️E-commerce",
+                    3000, // Waits 2s
+                    "-🎯Advertisment",
+                    3000,
+                    "-🎓Education ", // Types 'Four' without deleting 'Two'
+                    3000,
 
-                  "-🤖AI Development",
-                  3000,
-                  "-🛍️E-commerce",
-                  3000, // Waits 2s
-                  "-🎯Advertisment",
-                  3000,
-                  "-🎓Education ", // Types 'Four' without deleting 'Two'
-                  3000,
-
-                  // () => {
-                  //   console.log("Done typing!"); // Place optional callbacks anywhere in the array
-                  // },
-                ]}
-                wrapper="div"
-                cursor={true}
-                repeat={Infinity}
-                // style={{
-                //   textAlign: "center",
-                //   fontStyle: "italic",
-                //   color: "white",
-                //   fontSize: "6vw", // Use viewport width as a relative unit
-                //   fontWeight: "700",
-                //   letterSpacing: "0.8px",
-                //   lineHeight: "1",
-                //   maxWidth: "800px", // Set a maximum width for the text
-                //   paddingTop: "10px",
-                //   paddingBottom: "20px",
-                // }}
-                className="text-center sm:text-left  text-white text-[6vw] min-[420px]:text-[6vw] lg:text-[60px]  font-bold tracking-wide leading-6  pt-3 pb-2 sm:pt-0 lg:pt-4 sm:pb-5"
-              />
+                    // () => {
+                    //   console.log("Done typing!"); // Place optional callbacks anywhere in the array
+                    // },
+                  ]}
+                  wrapper="div"
+                  cursor={true}
+                  repeat={Infinity}
+                  // style={{
+                  //   textAlign: "center",
+                  //   fontStyle: "italic",
+                  //   color: "white",
+                  //   fontSize: "6vw", // Use viewport width as a relative unit
+                  //   fontWeight: "700",
+                  //   letterSpacing: "0.8px",
+                  //   lineHeight: "1",
+                  //   maxWidth: "800px", // Set a maximum width for the text
+                  //   paddingTop: "10px",
+                  //   paddingBottom: "20px",
+                  // }}
+                  className="text-center sm:text-left dark:text-white text-black text-[6vw] min-[420px]:text-[6vw] lg:text-[60px]  font-bold tracking-wide leading-6  pt-3 pb-2 sm:pt-0 lg:pt-4 sm:pb-5"
+                />
+              </div>
             </HeroH1>
+            {/* <div className="hidden dark:block">
+              <StarsCanvas />
+            </div> */}
           </div>
           {/* 
           todo - build a transparent background for the text
@@ -99,19 +103,19 @@ const Hero = () => {
           >
 
           </div> */}
-          <p className=" relative z-50 text-[5vw] min-[420px]:text-[4vw]  lg:text-[30px] text-center sm:text-left leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[40px] mb-5 md:mb-12 md:10/12  lg:w-8/12 text-white/50  mt-20">
+          <p className=" relative z-50 text-[5vw] min-[420px]:text-[4vw]  lg:text-[30px] text-center sm:text-left leading-[24px] sm:leading-[28px] md:leading-[36px] lg:leading-[40px] mb-5 md:mb-12 md:10/12  lg:w-8/12 /50  mt-20">
             Our vision is to bring innovative and effective solutions to
             real-world problems and make it a reality. Our ultimate goal is to
             create problem-solving software that not only streamlines processes
             but also makes a positive impact on people&apos;s lives.
           </p>
-          <div className="flex lg:w-11/12 md:space-x-5 max-md:flex-col">
+          <div className="flex lg:w-11/12 md:space-x-5 max-md:flex-col ">
             <form action="">
               <div className="grid max-md:grid-rows-2 md:grid-cols-2 md:border-[1px] md:border-[#6e40c9] md:overflow-hidden md:rounded-md">
                 <dl>
                   <dd>
                     <input
-                      className="h-[60px] focus:outline-none max-md:rounded-md  right-0 w-full placeholder:text-[16px]  pl-3 dark:bg-white/50 dark:text-white dark:placeholder:text-white bg-black/20 "
+                      className="h-[60px] focus:outline-none max-md:rounded-md  right-0 w-full placeholder:text-[16px]  pl-3  placeholder:text-black dark:placeholder:text-white bg-black/20 "
                       placeholder="Email"
                       type="email"
                       name="user_email"
@@ -123,7 +127,7 @@ const Hero = () => {
                 </dl>
                 <button
                   type="button"
-                  className="mb-10 md:mb-0 py-4 px-1 w-full home-campaign-signup-button font-bold text-[16px] max-md:rounded-md md:rounded-e-sm text-white "
+                  className="mb-10 md:mb-0 py-4 px-1 w-full home-campaign-signup-button font-bold text-[16px] max-md:rounded-md md:rounded-e-sm  "
                 >
                   Sign up for Osmanity
                 </button>
@@ -134,12 +138,12 @@ const Hero = () => {
               onMouseEnter={() => setHovered1(true)}
               onMouseLeave={() => setHovered1(false)}
               href=""
-              className="flex items-center w-full md:w-auto justify-center font-semibold text-[16px] py-4 px-5 max-md:mt-4 rounded-md border-[#6e40c9] border-[1.5px] text-white"
+              className="flex items-center w-full md:w-auto justify-center font-semibold text-[16px] py-4 px-5 max-md:mt-4 rounded-md border-[#6e40c9] border-[1.5px] "
             >
               Contact
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={` arrow-symbol-mktg text-white ml-3 transition ease-in duration-150 ${
+                className={` arrow-symbol-mktg  ml-3 transition ease-in duration-150 ${
                   hovered1 ? "translate-x-0 " : "-translate-x-1"
                 }`}
                 width="20"
@@ -152,7 +156,7 @@ const Hero = () => {
                   d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
                 ></path>
                 <path
-                  className={` text-white transition ease-in duration-150 ${
+                  className={`  transition ease-in duration-150 ${
                     hovered1 ? " opacity-100" : "opacity-0 "
                   }`}
                   stroke="currentColor"

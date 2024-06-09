@@ -1,3 +1,4 @@
+"use client";
 import BlogSidebar from "@/components/BlogSidebar/BlogSidebar";
 import Image from "next/image";
 import Link from "next/link";

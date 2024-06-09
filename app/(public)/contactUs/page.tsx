@@ -6,7 +6,7 @@ const Page: React.FC = () => {
   return (
     <div>
       <Heading
-        className="pt-52 pb-24"
+        className="pt-36 sm:pt-52 pb-24"
         title="Contact"
         subTitle="Get in touch"
       />

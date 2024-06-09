@@ -18,6 +18,8 @@ module.exports = withUt({
     },
     extend: {
       colors: {
+        dark: "#1b1b1b",
+        light: "#fff",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -86,6 +88,10 @@ module.exports = withUt({
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        roll:{
+          "0%": {transform: "translateX(100%)"},
+          "100%": {transform: "translateX(-100%)"}
+        },
         bounce: {
           "0%, 100%": {
             transform: "translateY(-25%)",
@@ -106,13 +112,15 @@ module.exports = withUt({
         "zoom-in": "zoomIn 0.3s ease-in",
         "spin-slow": "spin 3s linear infinite",
         bounce: "bounce 1s infinite",
+        roll: "roll 24s linear infinite"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--gradient-color-stops))',
       }
     },
   },
-  plugins: [ require("tailwindcss-animate"), require("daisyui")],
+  
+  plugins: [ require("tailwindcss-animate"), require("daisyui"),require('@tailwindcss/typography')],
   // todo - implement daisyui into the project AND use these values here:
   // daisyui: {
   //   themes: [

@@ -1,5 +1,5 @@
+import { MdArrowForward, MdKeyboardArrowRight } from "react-icons/md";
 import styled from "styled-components";
-import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 
 export const HeroContainter = styled.div`
   /* background-image: ${(props) => `url(${props.imgUrl})`}; */
@@ -96,7 +96,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const TopLine = styled.p`
-  color: #f7f8fa;
+  /* color: #f7f8fa; */
   font-size: 16px;
   line-height: 16px;
   font-weight: 700;
@@ -128,7 +128,7 @@ export const HeroP = styled.p`
   /* text-align: center; */
   /* max-width: 600px; */
 
-  color: #b8b8b8;
+  /* color: #b8b8b8; */
   /* font-size: 18px; */
   font-size: clamp(0.5rem, 1rem + 5vw, 18px);
   letter-spacing: 0.8px;

@@ -57,7 +57,7 @@ const PublicLayout = ({ children }: { children: React.ReactNode }) => {
   }, [resolvedTheme]);
 
   return (
-    <div className="dark:text-white text-black min-h-screen relative  dark:bg-[#050016] bg-white ">
+    <div className="dark:text-white text-black min-h-screen relative  dark:bg-[#050016] bg-[#F3F5F8]">
       <div className="z-50 sticky top-0">
         <div className="absolute">
           <Navbar />

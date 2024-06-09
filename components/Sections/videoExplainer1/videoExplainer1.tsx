@@ -1,6 +1,7 @@
 const VideoExplainer1 = () => {
   return (
-    <section className="md:py-20 py-10 px-4 bg-gradient-to-r from-indigo-900 to-indigo-300 dark:from-black/30 dark:to-black/30 spacey-10 bg-black/30 ">
+    // <section className="md:py-20 py-10 px-4 bg-gradient-to-r from-indigo-900 to-indigo-300 dark:from-black/30 dark:to-black/30 spacey-10 bg-black/30 ">
+    <section className="md:py-20 py-10 px-4  ">
       <div className=" sm:p-0 sm:container mx-auto text-start sm:text-center">
         <div
           className="
@@ -21,7 +22,7 @@ const VideoExplainer1 = () => {
           Build a brand and start selling in seconds
         </div>
 
-        <p className="text-lg md:text-xl md-10 text-white bg-clip-text font-bold">
+        <p className="text-lg md:text-xl md-10 dark:text-white text-black/70 bg-clip-text font-bold">
           No matter what you sell, Osmanity has everything you need to build
           your business.
         </p>
@@ -29,11 +30,11 @@ const VideoExplainer1 = () => {
           <button
             className="bg-gradient-to-r
             from-[#c990ff]
-            to-[#3e15f3] text-white px-10 py-4 rounded-md text-lg font-bold hover:from-[#c990ff]/75 hover:to-[#3e15f3]/75"
+            to-[#3e15f3] text-white  px-10 py-4 rounded-md text-lg font-bold hover:from-[#c990ff]/75 hover:to-[#3e15f3]/75"
           >
             Get Started
           </button>
-          <button className="bg-gray-600 text-white px-10 py-4 rounded-md text-lg font-bold">
+          <button className="bg-gray-600 text-white  px-10 py-4 rounded-md text-lg font-bold">
             Learn More
           </button>
         </div>

@@ -66,7 +66,7 @@ const VideoExplainer3 = () => {
                   width={70}
                   height={70}
                 />
-                <p>
+                <p className="text-start">
                   Add unlimited products and variations. Manage your inventory
                   with ease.
                 </p>
@@ -79,7 +79,7 @@ const VideoExplainer3 = () => {
                   width={70}
                   height={70}
                 />
-                <p>
+                <p className="text-start">
                   Gain valuable insights into your customers and products with
                   our analytics tools.
                 </p>
@@ -92,7 +92,7 @@ const VideoExplainer3 = () => {
                   width={70}
                   height={70}
                 />
-                <p>
+                <p className="text-start">
                   Best in class security to protect your data and your
                   customers.
                 </p>

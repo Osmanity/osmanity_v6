@@ -42,6 +42,10 @@ const Navbar = (props: Props) => {
   newPathname = pathname;
   if (pathname.includes("/blogs")) {
     newPathname = "/blogs";
+  } else if (pathname.includes("/blog")) {
+    newPathname = "/blog";
+  } else if (pathname.includes("/allBlogs")) {
+    newPathname = "/allBlogs";
   } else if (pathname.includes("/projects")) {
     newPathname = "/projects";
   }
@@ -210,7 +214,7 @@ const Navbar = (props: Props) => {
                       Courses
                     </a>
                   </li> */}
-                          <li onClick={() => router.push("/blogs")}>
+                          <li onClick={() => router.push("/blog")}>
                             <a className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer">
                               Blogs
                             </a>
@@ -240,9 +244,9 @@ const Navbar = (props: Props) => {
                     <li onClick={() => router.push("/")}>
                       <a
                         // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
-                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                        className={`relative mt-1 mr-1.5 pr-0.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[14px] tracking-[-1px]   pb-1  ${
                           newPathname === "/"
-                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1] pr-1 "
                             : "border-transparent"
                         } `}
                       >
@@ -255,9 +259,9 @@ const Navbar = (props: Props) => {
                     <li onClick={() => router.push("/about")}>
                       <a
                         // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
-                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                        className={`relative mt-1 mr-1.5 pr-0.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[14px] tracking-[-1px]   pb-1  ${
                           newPathname === "/about"
-                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1]"
                             : "border-transparent"
                         } `}
                       >
@@ -268,9 +272,9 @@ const Navbar = (props: Props) => {
                     <li onClick={() => router.push("/projects")}>
                       <a
                         // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
-                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                        className={`relative mt-1 mr-1.5 pr-0.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[14px] tracking-[-1px]   pb-1  ${
                           newPathname === "/projects"
-                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1]"
                             : "border-transparent"
                         } `}
                       >
@@ -282,12 +286,12 @@ const Navbar = (props: Props) => {
                       Courses
                     </a>
                   </li> */}
-                    <li onClick={() => router.push("/blogs")}>
+                    <li onClick={() => router.push("/blog")}>
                       <a
                         // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
-                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
-                          newPathname === "/blogs"
-                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                        className={`relative mt-1 mr-1.5 pr-0.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[14px] tracking-[-1px]   pb-1  ${
+                          newPathname === "/blog"
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1]"
                             : "border-transparent"
                         } `}
                       >
@@ -296,15 +300,15 @@ const Navbar = (props: Props) => {
                     </li>
                     <CoursesNav />
                     <li
-                      onClick={() =>
-                        router.push("https://docs.osmanity.com/docs")
-                      }
+                      onClick={() => {
+                        window.open("https://docs.osmanity.com/docs", "_blank");
+                      }}
                     >
                       <a
                         // className="max-lg:font-semibold  flex items-center p-1 mr-2 hover:text-neutral-300 hover:cursor-pointer"
-                        className={`relative mt-1 mr-1.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]   pb-1  ${
+                        className={`relative mt-1 mr-1.5 pr-0.5 hover:cursor-pointer max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[14px] tracking-[-1px]   pb-1  ${
                           newPathname === "/docs"
-                            ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                            ? "border-violet-600 text-violet-600 before:scale-x-[1]"
                             : "border-transparent"
                         } `}
                       >
@@ -322,24 +326,39 @@ const Navbar = (props: Props) => {
                   <a
                     href="/contactUs"
                     // className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold mr-1.5 "
-                    className={`relative mt-1 mr-1.5 max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[12px] tracking-[2px]  pb-1  ${
+                    className={`relative mt-1    before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[14px] tracking-[-1px]  pb-1  ${
                       newPathname === "/contactUs"
-                        ? "border-violet-600 text-violet-600 before:scale-x-[1] "
+                        ? "border-violet-600 text-violet-600 before:scale-x-[1]"
                         : "border-transparent"
                     } `}
                   >
-                    Contact Us!
+                    Contact Us
                   </a>
                   {/* <a href="/contact" className="">
                     <RiveComponent
-                      className="z-1000 w-full h-full top-0 absolute left-0 opacity-70 hover:opacity-100"
-                      // onMouseEnter={() => rive && rive.play()}
-                      // onMouseLeave={() => rive && rive.pause()}
+                    className="z-1000 w-full h-full top-0 absolute left-0 opacity-70 hover:opacity-100"
+                    // onMouseEnter={() => rive && rive.play()}
+                    // onMouseLeave={() => rive && rive.pause()}
                     />
-                  </a>
-
+                    </a>
+                    
                   <div className="pl-56" /> */}
                   {/* </div> */}
+                  {/* <div className="border  dark:border-white border-black px-0 py-3" /> */}
+
+                  <span className=" opacity-50 px-0 ">or</span>
+                  <a
+                    href="https://calendly.com/osmanity/30min"
+                    target="_blank"
+                    // className="hover:text-neutral-400 max-lg:py-2 max-lg:text-[16px] max-lg:font-semibold mr-1.5 "
+                    className={`relative mt-1 mr-1.5 pr-0.5 max-lg:py-2 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1.5px] before:bg-violet-600 before:origin-[100%, 50%] before:transition-all before:duration-300 before:ease-in-out before:scale-x-0 before:scale-y-[1] before:scale-z-[1] before:will-change-transform hover:before:origin-[100%, 0%] hover:before:scale-x-[1] hover:before:scale-y-[1] hover:before:scale-z-[1] text-[14px] tracking-[-1px]  pb-1  ${
+                      newPathname === "/bookmeeting"
+                        ? "border-violet-600 text-violet-600 before:scale-x-[1]"
+                        : "border-transparent"
+                    } `}
+                  >
+                    Book A Meeting!
+                  </a>
                   <div className="border  dark:border-white border-black px-0 py-3" />
                   <div className="flex items-center">
                     <Button

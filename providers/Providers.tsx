@@ -1,6 +1,7 @@
 "use client";
 import React, { ReactNode } from "react";
 import ChatProvider from "./ChatProvider";
+import { CheckboxProvider } from "./CheckboxProvider";
 import { ThemeProvider } from "./ThemeProvider/theme-provider";
 
 interface ProvidersProps {
@@ -15,7 +16,9 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
       enableSystem
       disableTransitionOnChange
     >
-      <ChatProvider>{children}</ChatProvider>
+      <CheckboxProvider>
+        <ChatProvider>{children}</ChatProvider>
+      </CheckboxProvider>
     </ThemeProvider>
   );
 };

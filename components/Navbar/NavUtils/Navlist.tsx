@@ -1,16 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 
 type Props = {
   main: string;
   submain: string;
   path: string;
   path2: string;
+  path3: string;
+  path4: string;
   href: string;
+  viewBoxValue?: string;
 };
 
-const Navlist = ({ main, submain, path, path2, href }: Props) => {
+const Navlist = ({
+  main,
+  submain,
+  path,
+  path2,
+  path3,
+  path4,
+  href,
+  viewBoxValue,
+}: Props) => {
   const [focus, setFocus] = useState<boolean>(false);
+  const viewBox = viewBoxValue || "0 0 24 24";
   return (
     <a
       href={href}
@@ -20,11 +33,11 @@ const Navlist = ({ main, submain, path, path2, href }: Props) => {
     >
       <svg
         aria-hidden="true"
-        height="24"
-        viewBox="0 0 24 24"
+        height="26"
+        viewBox={viewBox}
         fill="currentColor"
         version="1.1"
-        width="24"
+        width="26"
         data-view-component="true"
         className={` mr-3 transition ease-in duration-100  ${
           focus ? "text-[#7d40a9]" : "text-neutral-500"
@@ -32,7 +45,10 @@ const Navlist = ({ main, submain, path, path2, href }: Props) => {
       >
         <path d={path}></path>
         <path d={path2}></path>
+        <path d={path3}></path>
+        <path d={path4}></path>
       </svg>
+
       <div
         className={`${
           focus ? "text-[#7d40a9]" : "text-neutral-500"

@@ -5,7 +5,7 @@ const MenuCategories = () => {
   return (
     <div className={styles.categoryList}>
       <Link
-        href="/blog?cat=style"
+        href="/blogCategories/web-development"
         className={`${styles.categoryItem} ${styles.style}`}
       >
         Web-dev
@@ -24,6 +24,14 @@ const MenuCategories = () => {
       </Link>
       <Link href="/blog" className={`${styles.categoryItem} ${styles.coding}`}>
         3D
+      </Link>
+      <Link
+        href="/blogCategories/all"
+        className={`${styles.categoryItem} ${styles.all}`}
+      >
+        <p className="text-[14px] tracking-[1px] uppercase border-b-2  inline-block border-violet-600">
+          All-Categories
+        </p>
       </Link>
     </div>
   );
