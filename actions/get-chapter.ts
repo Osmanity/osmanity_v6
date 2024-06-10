@@ -5,7 +5,7 @@ interface GetChapterProps {
   userId: string;
   courseId: string;
   chapterId: string;
-};
+}
 
 export const getChapter = async ({
   userId,
@@ -43,7 +43,8 @@ export const getChapter = async ({
       throw new Error("Chapter or course not found");
     }
 
-    let muxData = null;
+    // Explicitly define the type of muxData to accommodate both the object and null
+    let muxData: { id: string; assetId: string; playbackId: string | null; chapterId: string; } | null = null; // Change 1
     let attachments: Attachment[] = [];
     let nextChapter: Chapter | null = null;
 
@@ -104,6 +105,6 @@ export const getChapter = async ({
       nextChapter: null,
       userProgress: null,
       purchase: null,
-    }
+    };
   }
-}
+};

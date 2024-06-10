@@ -9,7 +9,8 @@ import ReactPaginate from "react-paginate";
 import { motion } from "framer-motion";
 import BlogSidebar from "../BlogSidebar/BlogSidebar";
 
-const Items = ({ currentItems }) => {
+// Define the type for the props of Items component
+const Items = ({ currentItems }: { currentItems: any[] }) => {
   return (
     <>
       {currentItems &&
@@ -63,6 +64,7 @@ const Items = ({ currentItems }) => {
   );
 };
 
+// Define the type for the props of Posts component
 const Posts = ({
   className,
   itemsPerPage,
@@ -74,13 +76,13 @@ const Posts = ({
   archive?: boolean;
   params?: { slug?: string };
 }) => {
-  const [currentItems, setCurrentItems] = useState(null);
+  const [currentItems, setCurrentItems] = useState<any[]>([]); // Change 1
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [clickPaginate, setclickPaginate] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
 
-  let items = null;
+  let items: any[] = []; // Change 2
   if (archive === false) {
     items = allPosts.sort((a, b) =>
       compareDesc(new Date(a.date), new Date(b.date)),
@@ -105,9 +107,9 @@ const Posts = ({
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(items.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(items.length / itemsPerPage));
-    // fix this doesnt behave as exacpted fix it later
+    // Fix this: Scroll into view behavior correction
     if (clickPaginate === true) {
-      setTimeout(function () {
+      setTimeout(() => {
         ref.current?.scrollIntoView({ block: "start", behavior: "smooth" });
       }, 300);
       setclickPaginate(false);
@@ -120,15 +122,16 @@ const Posts = ({
     itemsPerPage,
     clickPaginate,
     ref,
+    items,
   ]);
 
-  const handlePageClick = (event) => {
+  const handlePageClick = (event: { selected: number }) => {
     const newOffset = (event.selected * itemsPerPage) % items.length;
     setclickPaginate(true);
     setItemOffset(newOffset);
   };
 
-  if (!items) return null;
+  if (items.length === 0) return null; // Change 3
 
   return (
     <section className={`${className}`} ref={ref}>
