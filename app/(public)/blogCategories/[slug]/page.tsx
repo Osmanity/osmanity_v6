@@ -9,12 +9,12 @@ import GithubSlugger, { slug } from "github-slugger";
 const slugger = new GithubSlugger();
 
 export async function generateStaticParams() {
-  const categories = [];
-  const paths = [{ slug: "all" }];
+  const categories: string[] = [];
+  const paths: { slug: string }[] = [{ slug: "all" }];
 
-  allPosts.map((blog) => {
+  allPosts.forEach((blog) => {
     if (blog.isPublished) {
-      blog.tags.map((tag) => {
+      blog.tags.forEach((tag) => {
         const slugified = slugger.slug(tag);
         if (!categories.includes(slugified)) {
           categories.push(slugified);
