@@ -77,7 +77,7 @@ const CategoryPage = ({ params }) => {
         {blogs.map((blog, index) => (
           <article key={index} className="col-span-1 row-span-1 relative">
             {/* <BlogLayoutThree blog={blog} /> */}
-            <PostCard post={blog} />
+            <PostCard post={blog} index={index} />
           </article>
         ))}
       </div>
