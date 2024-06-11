@@ -33,7 +33,8 @@
     "app/(public)/blogs/[id]/page.jsx",
     "helper/CameraPositionLogger.jsx",
     "prettier.config.js",
-    ".contentlayer/generated"
+    ".contentlayer/generated",
+    ".contentlayer/generated/types.d.ts"
   ],
   "exclude": ["node_modules"]
 }
