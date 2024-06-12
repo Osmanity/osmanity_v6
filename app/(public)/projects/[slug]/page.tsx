@@ -20,9 +20,13 @@ const ProjectLayout = ({ params }) => {
     (project) => project._raw.flattenedPath === "projects/" + params.slug,
   );
 
+  if (!project) {
+    return <div>Project not found</div>;
+  }
+
   return (
     <>
-      <ProjectContent project={project} />
+      <ProjectContent project={project} params={params} />
     </>
   );
 };

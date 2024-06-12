@@ -30,6 +30,8 @@ interface Project {
     code: string;
   };
   toc: Headings[];
+  slug: string;
+  excerpt: string;
 }
 
 interface ProjectContentProps {
