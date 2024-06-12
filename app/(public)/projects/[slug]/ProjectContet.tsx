@@ -82,14 +82,12 @@ const NAVBAR_HEIGHT = 100; // Update this with your actual navbar height
 const adjustScrollPosition = () => {
   if (window.location.hash) {
     let hash = window.location.hash;
-    // Check if the hash starts with #
     if (!hash.startsWith("#")) {
-      // Add # symbol if it's missing
       hash = "#" + hash;
     }
     const element = document.querySelector(hash);
     if (element) {
-      const offsetPosition = element.offsetTop - NAVBAR_HEIGHT;
+      const offsetPosition = (element as HTMLElement).offsetTop - NAVBAR_HEIGHT;
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
@@ -101,7 +99,8 @@ const adjustScrollPosition = () => {
 const scrollToCommentSection = () => {
   const commentSection = document.getElementById("comment-section");
   if (commentSection) {
-    const offsetPosition = commentSection.offsetTop - NAVBAR_HEIGHT;
+    const offsetPosition =
+      (commentSection as HTMLElement).offsetTop - NAVBAR_HEIGHT;
     window.scrollTo({ top: offsetPosition, behavior: "smooth" });
   }
 };
