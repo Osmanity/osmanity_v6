@@ -52,6 +52,11 @@ const Post = defineDocumentType(() => ({
       description: "The tags of the post",
       required: true,
     },
+    isPublished: {
+      type: "boolean",
+      description: "Whether the post is published",
+      required: true,
+    },
   },
   computedFields: {
     url: {
