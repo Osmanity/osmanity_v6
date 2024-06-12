@@ -79,7 +79,7 @@ const Post = defineDocumentType(() => ({
               text: content,
               slug: content ? slugger.slug(content) : undefined,
             };
-          },
+          }
         );
 
         return headings;
@@ -161,7 +161,7 @@ const Project = defineDocumentType(() => ({
               text: content,
               slug: content ? slugger.slug(content) : undefined,
             };
-          },
+          }
         );
 
         return headings;
@@ -175,16 +175,15 @@ const codeOptions = {
   grid: false,
 };
 
-export default makeSource({  
+export default makeSource({
   contentDirPath: "content",
   documentTypes: [Post, Project],
-  mdx: { 
-    remarkPlugins: [remarkGfm], 
+  mdx: {
+    remarkPlugins: [remarkGfm],
     rehypePlugins: [
-      rehypeSlug, 
-      [rehypeAutolinkHeadings, { behavior: "append" }], 
-      [rehypePrettyCode, codeOptions] 
+      rehypeSlug,
+      [rehypeAutolinkHeadings, { behavior: "append" }],
+      [rehypePrettyCode, codeOptions],
     ],
-    
-  }
+  },
 });

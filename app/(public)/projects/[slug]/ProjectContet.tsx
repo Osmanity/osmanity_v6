@@ -13,11 +13,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-// interface Heading {
-//   level: number;
-//   text: string;
-//   slug: string;
-// }
+interface Headings {
+  level: number;
+  text: string;
+  slug: string;
+}
 
 interface Project {
   title: string;
@@ -29,7 +29,7 @@ interface Project {
   body: {
     code: string;
   };
-  // toc: Heading[];
+  toc: Headings[];
 }
 
 interface ProjectContentProps {
