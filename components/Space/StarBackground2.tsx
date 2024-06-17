@@ -5,14 +5,16 @@ import { useTheme } from "next-themes";
 import { Suspense, useRef, useState } from "react";
 
 const StarBackground = (props) => {
-  const { setTheme, resolvedTheme } = useTheme();
-  const ref = useRef();
+  const { resolvedTheme } = useTheme();
+  const ref = useRef<THREE.Points>(null);
   const [spheres] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 }),
   );
 
   useFrame((state, delta) => {
-    ref.current.rotation.y -= delta / 3.5;
+    if (ref.current) {
+      ref.current.rotation.y -= delta / 3.5;
+    }
   });
 
   return (
