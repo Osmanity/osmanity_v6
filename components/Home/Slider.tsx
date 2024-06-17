@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import Slider from "react-slick";
-
-import { useRef } from "react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
@@ -20,7 +19,6 @@ function SampleNextArrow(props) {
         top: "50%",
         right: "10px",
         zIndex: "100",
-        // paddingRight: "10px",
       }}
       onClick={onClick}
     />
@@ -39,7 +37,6 @@ function SamplePrevArrow(props) {
         top: "50%",
         left: "10px",
         zIndex: "100",
-        // paddingLeft: "10px",
       }}
       onClick={onClick}
     />
@@ -47,32 +44,26 @@ function SamplePrevArrow(props) {
 }
 
 const SliderOne = () => {
-  let sliderRef = useRef(null);
+  const sliderRef = useRef<Slider>(null);
+
   const next = () => {
-    sliderRef.slickNext();
+    if (sliderRef.current) {
+      sliderRef.current.slickNext();
+    }
   };
+
   const previous = () => {
-    sliderRef.slickPrev();
+    if (sliderRef.current) {
+      sliderRef.current.slickPrev();
+    }
   };
+
   const isMediumScreen = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
   const isSmallScreen = useMediaQuery({ maxWidth: 767 });
   const imgHeight = 2000;
   const imgWidth = 2000;
 
   const settings = {
-    // customPaging: function (i: any) {
-    //   return (
-    //     <a>
-    //       <Image
-    //         src={`/images/abstract0${i + 1}.jpg`}
-    //         alt="logo"
-    //         width={300}
-    //         height={300}
-    //         className="cursor-pointer hover:opacity-70"
-    //       />
-    //     </a>
-    //   );
-    // },
     focusOnSelect: true,
     arrows: true,
     dots: true,
@@ -83,8 +74,6 @@ const SliderOne = () => {
     speed: 1500,
     autoplaySpeed: 1000,
     pauseOnHover: true,
-    // centerMode: true,
-    // centerPadding: "10px",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     className: " w-full mx-auto  center-mode ",
@@ -98,79 +87,58 @@ const SliderOne = () => {
 
   return (
     <div className="my-20 ">
-      <Slider
-        ref={(slider) => {
-          sliderRef = slider;
-        }}
-        {...settings}
-      >
-        <>
-          <div className="rounded-md px-2 md:p-10 ">
-            <Image
-              src="/img/bluangel_webbplatsen.png"
-              alt="logo"
-              width={imgHeight}
-              height={imgWidth}
-              className="rounded-2xl cursor-pointer hover:opacity-70"
-            />
-          </div>
-        </>
-
-        <>
-          <div className="rounded-md px-2 md:p-10">
-            <Image
-              src="/img/bluangel_webbplatsen.png"
-              alt="logo"
-              width={imgHeight}
-              height={imgWidth}
-              className="rounded-2xl cursor-pointer hover:opacity-70"
-            />
-          </div>
-        </>
-
-        <>
-          <div className="rounded-md px-2 md:p-10">
-            <Image
-              src="/img/bluangel_webbplatsen.png"
-              alt="logo"
-              width={imgHeight}
-              height={imgWidth}
-              className="rounded-2xl cursor-pointer hover:opacity-70"
-            />
-          </div>
-        </>
-
-        <>
-          <div className="rounded-md px-2 md:p-10">
-            <Image
-              src="/img/bluangel_webbplatsen.png"
-              alt="logo"
-              width={imgHeight}
-              height={imgWidth}
-              className="rounded-2xl cursor-pointer hover:opacity-70"
-            />
-          </div>
-        </>
-
-        <>
-          <div className="rounded-md px-2 md:p-10">
-            <Image
-              src="/img/bluangel_webbplatsen.png"
-              alt="logo"
-              width={imgHeight}
-              height={imgWidth}
-              className="rounded-2xl cursor-pointer hover:opacity-70"
-            />
-          </div>
-        </>
+      <Slider ref={sliderRef} {...settings}>
+        <div className="rounded-md px-2 md:p-10">
+          <Image
+            src="/img/bluangel_webbplatsen.png"
+            alt="logo"
+            width={imgHeight}
+            height={imgWidth}
+            className="rounded-2xl cursor-pointer hover:opacity-70"
+          />
+        </div>
+        <div className="rounded-md px-2 md:p-10">
+          <Image
+            src="/img/bluangel_webbplatsen.png"
+            alt="logo"
+            width={imgHeight}
+            height={imgWidth}
+            className="rounded-2xl cursor-pointer hover:opacity-70"
+          />
+        </div>
+        <div className="rounded-md px-2 md:p-10">
+          <Image
+            src="/img/bluangel_webbplatsen.png"
+            alt="logo"
+            width={imgHeight}
+            height={imgWidth}
+            className="rounded-2xl cursor-pointer hover:opacity-70"
+          />
+        </div>
+        <div className="rounded-md px-2 md:p-10">
+          <Image
+            src="/img/bluangel_webbplatsen.png"
+            alt="logo"
+            width={imgHeight}
+            height={imgWidth}
+            className="rounded-2xl cursor-pointer hover:opacity-70"
+          />
+        </div>
+        <div className="rounded-md px-2 md:p-10">
+          <Image
+            src="/img/bluangel_webbplatsen.png"
+            alt="logo"
+            width={imgHeight}
+            height={imgWidth}
+            className="rounded-2xl cursor-pointer hover:opacity-70"
+          />
+        </div>
       </Slider>
       <div className="pt-6" style={{ textAlign: "center" }}>
-        <button className="  pr-4" onClick={previous}>
+        <button className="pr-4" onClick={previous}>
           Previous
         </button>
-        <button className=" " onClick={next}>
-          Next
-        </button>
+        <button onClick={next}>Next</button>
       </div>
     </div>
   );
