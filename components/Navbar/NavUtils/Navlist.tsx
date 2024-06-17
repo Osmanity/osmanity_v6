@@ -6,8 +6,8 @@ type Props = {
   submain: string;
   path: string;
   path2: string;
-  path3: string;
-  path4: string;
+  path3?: string;
+  path4?: string;
   href: string;
   viewBoxValue?: string;
 };

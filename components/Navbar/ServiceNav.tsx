@@ -120,7 +120,7 @@ const ServiceNav = (props: Props) => {
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-bot"
+              className="lucide lucide-bot"
             >
               <path d="M12 8V4H8" />
               <rect width="16" height="12" x="4" y="8" rx="2" />
