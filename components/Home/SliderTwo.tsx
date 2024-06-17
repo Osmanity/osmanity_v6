@@ -1,10 +1,10 @@
 "use client";
-import Autoplay from "embla-carousel-autoplay";
+
+import Autoplay, { AutoplayType } from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
-
 import { Pause, Play } from "lucide-react";
+import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import {
   NextButton,
@@ -20,13 +20,13 @@ export default function SliderTwo() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({ playOnInit: true, delay: 4500 }),
   ]);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   useEffect(() => {
     if (emblaApi) {
       console.log(emblaApi.slideNodes()); // Access API
     }
   }, [emblaApi]);
-
-  const [isPlaying, setIsPlaying] = useState(false);
 
   const {
     prevBtnDisabled,
@@ -37,7 +37,8 @@ export default function SliderTwo() {
 
   const onButtonAutoplayClick = useCallback(
     (callback: () => void) => {
-      const autoplay = emblaApi?.plugins()?.autoplay;
+      if (!emblaApi) return;
+      const autoplay = emblaApi.plugins().autoplay as AutoplayType | undefined;
       if (!autoplay) return;
 
       const resetOrStop =
@@ -52,7 +53,8 @@ export default function SliderTwo() {
   );
 
   const toggleAutoplay = useCallback(() => {
-    const autoplay = emblaApi?.plugins()?.autoplay;
+    if (!emblaApi) return;
+    const autoplay = emblaApi.plugins().autoplay as AutoplayType | undefined;
     if (!autoplay) return;
 
     const playOrStop = autoplay.isPlaying() ? autoplay.stop : autoplay.play;
@@ -60,14 +62,18 @@ export default function SliderTwo() {
   }, [emblaApi]);
 
   useEffect(() => {
-    const autoplay = emblaApi?.plugins()?.autoplay;
+    if (!emblaApi) return;
+    const autoplay = emblaApi.plugins().autoplay as AutoplayType | undefined;
     if (!autoplay) return;
 
     setIsPlaying(autoplay.isPlaying());
     emblaApi
-      .on("autoplay:play", () => setIsPlaying(true))
-      .on("autoplay:stop", () => setIsPlaying(false))
-      .on("reInit", () => setIsPlaying(false));
+      .on("init", () => {
+        setIsPlaying(autoplay.isPlaying());
+      })
+      .on("destroy", () => {
+        setIsPlaying(false);
+      });
   }, [emblaApi]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -83,19 +89,16 @@ export default function SliderTwo() {
         />
       </div>
       <div className="embla2 mx-10" ref={emblaRef}>
-        {/* <div className="embla__viewport" ref={emblaRef}> */}
         <div className="embla__container2 ">
-          {" "}
           <div className="embla__slide2 px-4" key={1}>
             <div className="flex xl:flex-row flex-col gap-4">
               <div className="">
                 <Image
-                  // priority
                   src="/img/blueangel_mockup.png"
                   alt="logo"
                   width={700}
                   height={300}
-                  className="  cursor-pointer hover:opacity-70"
+                  className="cursor-pointer hover:opacity-70"
                 />
               </div>
               <motion.h2
@@ -119,12 +122,11 @@ export default function SliderTwo() {
             <div className="flex xl:flex-row flex-col gap-4">
               <div className="">
                 <Image
-                  // priority
                   src="/img/bluangel_webbplatsen.png"
                   alt="logo"
                   width={700}
                   height={300}
-                  className="shadow-md  cursor-pointer hover:opacity-70"
+                  className="shadow-md cursor-pointer hover:opacity-70"
                 />
               </div>
               <motion.h2
@@ -148,12 +150,11 @@ export default function SliderTwo() {
             <div className="flex xl:flex-row flex-col gap-4">
               <div className="">
                 <Image
-                  // priority
                   src="/img/bluangel_webbplatsen.png"
                   alt="logo"
                   width={700}
                   height={300}
-                  className="shadow-md  cursor-pointer hover:opacity-70"
+                  className="shadow-md cursor-pointer hover:opacity-70"
                 />
               </div>
               <motion.h2
@@ -174,18 +175,8 @@ export default function SliderTwo() {
             </div>
           </div>
         </div>
-        {/* </div>   */}
         <div className="flex flex-row justify-center my-4">
-          <div className="embla__buttons flex flex-row gap-2">
-            {/* <PrevButton
-            onClick={() => onButtonAutoplayClick(onPrevButtonClick)}
-            disabled={prevBtnDisabled}
-          />
-          <NextButton
-            onClick={() => onButtonAutoplayClick(onNextButtonClick)}
-            disabled={nextBtnDisabled}
-          /> */}
-          </div>
+          <div className="embla__buttons flex flex-row gap-2"></div>
         </div>
       </div>
 
