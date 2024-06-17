@@ -6,17 +6,7 @@ import GithubSlugger from "github-slugger";
 
 const slugger = new GithubSlugger();
 
-export async function generateMetadata({ params }) {
-  return {
-    title: `${params.slug.replaceAll("-", " ")} Blogs`,
-    description: `Learn more about ${
-      params.slug === "all" ? "web development" : params.slug
-    } through our collection of expert blogs and tutorials`,
-  };
-}
-
 const CategoryPage = ({ params }) => {
-  // Separating logic to create list of categories from all blogs
   const allCategories = ["all"]; // Initialize with 'all' category
   allPosts.forEach((blog) => {
     blog.tags.forEach((tag) => {
@@ -30,7 +20,7 @@ const CategoryPage = ({ params }) => {
   // Sort allCategories to ensure they are in alphabetical order
   allCategories.sort();
 
-  // Step 2: Filter blogs based on the current category (params.slug)
+  // Filter blogs based on the current category (params.slug)
   const blogs = allPosts.filter((blog) => {
     if (params.slug === "all") {
       return true; // Include all blogs if 'all' category is selected
