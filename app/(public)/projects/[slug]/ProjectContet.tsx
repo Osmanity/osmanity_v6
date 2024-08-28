@@ -44,9 +44,9 @@ const mdxComponent = {
   Checkmark,
 };
 
-export async function generateStaticParams() {
-  return allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
-}
+// export async function generateStaticParams() {
+//   return allProjects.map((project) => ({ slug: project._raw.flattenedPath }));
+// }
 
 // Parse Markdown content to extract headings and their slugs
 // const parseMarkdownContent = (content: string): Heading[] => {
