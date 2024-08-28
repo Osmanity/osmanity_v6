@@ -16,9 +16,9 @@ const mdxComponent = {
   Checkmark,
 };
 
-export async function generateStaticParams() {
-  return allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
-}
+// export async function generateStaticParams() {
+//   return allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
+// }
 
 function slugify(str) {
   return str
