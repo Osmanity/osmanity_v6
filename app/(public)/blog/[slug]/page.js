@@ -1,12 +1,12 @@
-import React from 'react';
 import { allPosts } from 'contentlayer/generated';
+import React from 'react';
 import BlogContent from './BlogContent';
 
-export async function generateStaticParams() {
-  const posts = await allPosts;
+// export async function generateStaticParams() {
+//   const posts = await allPosts;
 
-  return posts.map((post) => ({ slug: post.slug }));
-};
+//   return posts.map((post) => ({ slug: post.slug }));
+// };
 
 export const generateMetadata = async ({ params }) => {
   const post = allPosts.find((post) => post._raw.flattenedPath === 'blog/' + params.slug);
